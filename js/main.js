@@ -1,13 +1,13 @@
 function initApp() {
   [
     initHeader,
+    initServicesDropdown,
     initHeroHighlight,
     initRevealAnimations,
     initCountUp,
     initAboutVideos,
     initReviews,
     loadAllEmbeds,
-    initPrivacyPolicyModal,
     function () {
       document.getElementById("currentYear").textContent = new Date().getFullYear();
     }
@@ -74,6 +74,22 @@ function initHeader() {
     if (logoLink.getAttribute("href") !== "#top") return;
     e.preventDefault();
     window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+}
+
+function initServicesDropdown() {
+  var dropdown = document.querySelector(".site-header__dropdown");
+  if (!dropdown) return;
+  var toggle = dropdown.querySelector(".site-header__dropdown-toggle");
+  if (!toggle) return;
+
+  toggle.addEventListener("click", function () {
+    dropdown.classList.add("is-closed");
+    toggle.blur();
+  });
+
+  dropdown.addEventListener("mouseleave", function () {
+    dropdown.classList.remove("is-closed");
   });
 }
 
@@ -169,14 +185,37 @@ function resolveCountSince() {
   });
 }
 
+function animateCountUpGroup(container) {
+  container.querySelectorAll(".count-up").forEach(animateCountUp);
+}
+
 function initCountUp() {
   resolveCountSince();
 
-  var elements = document.querySelectorAll(".count-up");
-  if (!elements.length) return;
+  var heroStats = document.querySelector(".hero__stats");
+  var heroIsMobile = window.matchMedia("(max-width: 767px)").matches;
+  if (heroStats && heroIsMobile && "IntersectionObserver" in window) {
+    var heroObserver = new IntersectionObserver(
+      function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            heroObserver.unobserve(entry.target);
+            animateCountUpGroup(entry.target);
+          }
+        });
+      },
+      { root: null, rootMargin: "0px", threshold: 0.01 }
+    );
+    heroObserver.observe(heroStats);
+  } else if (heroStats) {
+    animateCountUpGroup(heroStats);
+  }
+
+  var groups = document.querySelectorAll(".about__stats, .reviews__heading");
+  if (!groups.length) return;
 
   if (!("IntersectionObserver" in window)) {
-    elements.forEach(animateCountUp);
+    groups.forEach(animateCountUpGroup);
     return;
   }
 
@@ -184,16 +223,15 @@ function initCountUp() {
     function (entries) {
       entries.forEach(function (entry) {
         if (entry.isIntersecting) {
-          var el = entry.target;
-          observer.unobserve(el);
-          setTimeout(function () { animateCountUp(el); }, 400);
+          observer.unobserve(entry.target);
+          animateCountUpGroup(entry.target);
         }
       });
     },
-    { root: null, rootMargin: "0px", threshold: 0.3 }
+    { root: null, rootMargin: "-80px 0px", threshold: 0.2 }
   );
 
-  elements.forEach(function (el) { observer.observe(el); });
+  groups.forEach(function (g) { observer.observe(g); });
 }
 
 function initAboutVideos() {
@@ -396,6 +434,14 @@ function initMobileReviews() {
   }, { passive: true });
 }
 
+function hasEmbedConsent() {
+  try {
+    return window.localStorage.getItem("cookie-consent-embeds") === "granted";
+  } catch (e) {
+    return false;
+  }
+}
+
 function loadEmbed(container) {
   if (!container || container.dataset.embedLoaded === "true") return;
   var iframe = document.createElement("iframe");
@@ -412,43 +458,58 @@ function loadEmbed(container) {
   container.appendChild(iframe);
 }
 
+function renderEmbedPlaceholder(container) {
+  if (!container || container.dataset.embedLoaded === "true") return;
+  var isMap = container.getAttribute("data-embed-kind") === "map";
+  var text = isMap
+    ? "Mapa Google - załaduj, aby zobaczyć lokalizację. Ładowanie spowoduje zapisanie plików cookies Google."
+    : "Film z YouTube - załaduj, aby zobaczyć montaż w naszym warsztacie. Ładowanie spowoduje zapisanie plików cookies Google.";
+  var btnLabel = isMap ? "Załaduj mapę" : "Załaduj film";
+
+  var wrap = document.createElement("div");
+  wrap.className = "embed-placeholder";
+
+  var p = document.createElement("p");
+  p.className = "embed-placeholder__text";
+  p.textContent = text;
+
+  var btn = document.createElement("button");
+  btn.type = "button";
+  btn.className = "btn btn--outline";
+  btn.textContent = btnLabel;
+  btn.addEventListener("click", function () {
+    loadEmbed(container);
+  });
+
+  wrap.appendChild(p);
+  wrap.appendChild(btn);
+  container.innerHTML = "";
+  container.appendChild(wrap);
+}
+
 function loadAllEmbeds() {
   var containers = document.querySelectorAll("[data-embed-src]");
   if (!containers.length) return;
 
-  function load() {
-    containers.forEach(loadEmbed);
+  function apply() {
+    containers.forEach(function (container) {
+      if (hasEmbedConsent()) {
+        loadEmbed(container);
+      } else {
+        renderEmbedPlaceholder(container);
+      }
+    });
   }
+
   if ("requestIdleCallback" in window) {
-    requestIdleCallback(load, { timeout: 3000 });
+    requestIdleCallback(apply, { timeout: 3000 });
   } else {
-    setTimeout(load, 1200);
+    setTimeout(apply, 1200);
   }
-}
 
-function openPrivacyPolicy() {
-  var modal = document.getElementById("privacyModal");
-  modal.classList.add("is-open");
-  document.body.style.overflow = "hidden";
-}
-
-function closePrivacyPolicy() {
-  var modal = document.getElementById("privacyModal");
-  modal.classList.remove("is-open");
-  document.body.style.overflow = "";
-}
-
-function initPrivacyPolicyModal() {
-  var footerBtn = document.getElementById("footerPrivacyBtn");
-  var closeBtn = document.getElementById("privacyCloseBtn");
-  var backdrop = document.getElementById("privacyBackdrop");
-
-  footerBtn.addEventListener("click", openPrivacyPolicy);
-  closeBtn.addEventListener("click", closePrivacyPolicy);
-  backdrop.addEventListener("click", closePrivacyPolicy);
-
-  document.addEventListener("keydown", function (e) {
-    if (e.key === "Escape") closePrivacyPolicy();
+  window.addEventListener("cookieConsentEmbedsAccepted", function () {
+    containers.forEach(loadEmbed);
   });
 }
+
 

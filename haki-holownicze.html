@@ -1,22 +1,8 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-<!-- Google tag (gtag.js) with Consent Mode: loads immediately so Google's
-     tag-detection tools find it, but analytics_storage defaults to denied
-     until the user accepts cookies in the RODO banner (js/consent.js). -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-WXFQ5M9ZVY"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('consent', 'default', {
-    'ad_storage': 'denied',
-    'ad_user_data': 'denied',
-    'ad_personalization': 'denied',
-    'analytics_storage': 'denied'
-  });
-  gtag('config', 'G-WXFQ5M9ZVY');
-</script>
+<script src="js/ga-init.js"></script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Haki Holownicze Bielsko-Biała – Auto Diag | Montaż</title>
@@ -88,10 +74,21 @@
     </a>
 
     <div class="site-header__nav">
-      <a href="/#uslugi" class="site-header__link">Usługi</a>
+      <div class="site-header__dropdown">
+        <a href="/#uslugi" class="site-header__link site-header__dropdown-toggle" aria-haspopup="true" aria-expanded="false">
+          Usługi
+          <svg class="site-header__dropdown-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5"/></svg>
+        </a>
+        <div class="site-header__dropdown-menu">
+          <a href="/instalacje-lpg" class="site-header__dropdown-link">Instalacje LPG</a>
+          <a href="/haki-holownicze" class="site-header__dropdown-link">Haki holownicze</a>
+          <a href="/diagnostyka-komputerowa" class="site-header__dropdown-link">Diagnostyka</a>
+          <a href="/elektronika-alarmy" class="site-header__dropdown-link">Elektronika i alarmy</a>
+        </div>
+      </div>
       <a href="/#o-nas" class="site-header__link">O nas</a>
       <a href="/#opinie" class="site-header__link">Opinie</a>
-      <a href="/#faq" class="site-header__link">FAQ</a>
+      <a href="/faq" class="site-header__link">FAQ</a>
       <a href="/#kontakt" class="site-header__link">Kontakt</a>
       <a href="tel:+48334862716" class="btn btn--primary site-header__cta">Zadzwoń</a>
     </div>
@@ -104,17 +101,23 @@
 
   <div class="site-header__mobile" id="mobileMenu">
     <div class="site-header__mobile-inner">
-      <a href="/#uslugi" class="site-header__mobile-link">Usługi</a>
+      <a href="/instalacje-lpg" class="site-header__mobile-link">Instalacje LPG</a>
+      <a href="/haki-holownicze" class="site-header__mobile-link">Haki holownicze</a>
+      <a href="/diagnostyka-komputerowa" class="site-header__mobile-link">Diagnostyka</a>
+      <a href="/elektronika-alarmy" class="site-header__mobile-link">Elektronika i alarmy</a>
       <a href="/#o-nas" class="site-header__mobile-link">O nas</a>
       <a href="/#opinie" class="site-header__mobile-link">Opinie</a>
-      <a href="/#faq" class="site-header__mobile-link">FAQ</a>
+      <a href="/faq" class="site-header__mobile-link">FAQ</a>
       <a href="/#kontakt" class="site-header__mobile-link">Kontakt</a>
 
       <div class="site-header__mobile-calls">
         <p class="site-header__mobile-calls-label">Zadzwoń do nas</p>
         <a href="tel:+48334862716" class="site-header__mobile-call"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z"/></svg> +48 (33) 486 27 16</a>
-        <a href="tel:+48602597144" class="site-header__mobile-call"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z"/></svg> +48 602 597 144</a>
-        <a href="tel:+48666228340" class="site-header__mobile-call"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z"/></svg> +48 666 228 340</a>
+        <div class="site-header__mobile-calls-secondary">
+          <span class="site-header__mobile-calls-secondary-label">Dodatkowe numery</span>
+          <a href="tel:+48602597144" class="site-header__mobile-call site-header__mobile-call--secondary"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z"/></svg> +48 602 597 144</a>
+          <a href="tel:+48666228340" class="site-header__mobile-call site-header__mobile-call--secondary"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z"/></svg> +48 666 228 340</a>
+        </div>
       </div>
     </div>
   </div>
@@ -159,11 +162,44 @@
           <li><strong>Wiązki dedykowane</strong> - elektronika haka zintegrowana z fabryczną instalacją i modułem CANbus samochodu, zapewniająca pełną współpracę ze światłami i systemami wspomagania.</li>
           <li><strong>Wiązki uniwersalne</strong> - standardowe złącza 7- lub 13-pinowe, sprawdzające się w starszych modelach lub przy prostszych zastosowaniach.</li>
         </ul>
+        <p>
+          Dobór odpowiedniego typu haka i wiązki elektrycznej omawiamy z klientem jeszcze przed montażem, biorąc pod uwagę to, czy przyczepa lub bagażnik będą używane sporadycznie, czy regularnie przez cały rok, a także wiek i wyposażenie samochodu. Dzięki temu hak nie tylko spełnia formalne wymogi homologacji, ale też realnie pasuje do sposobu, w jaki samochód jest użytkowany na co dzień.
+        </p>
 
         <h2>Co obejmuje montaż w naszym warsztacie</h2>
         <p>
-          Montaż rozpoczynamy od doboru haka i wiązki elektrycznej dopasowanych do konkretnego rocznika i wersji silnikowej samochodu. Po zamocowaniu haka podłączamy i programujemy moduł elektroniczny, a na koniec sprawdzamy działanie świateł przeciwmgielnych przyczepy oraz - jeśli auto je posiada - adaptację czujników parkowania do pracy z zaczepioną przyczepą. Cały montaż zwykle zajmuje kilka godzin, w zależności od modelu i typu wiązki.
+          Montaż rozpoczynamy od doboru haka i wiązki elektrycznej dopasowanych do konkretnego rocznika i wersji silnikowej samochodu - te same modele auta mogą różnić się mocowaniami w zależności od wyposażenia czy rynku, na który zostały wyprodukowane. Po zdjęciu zderzaka mocujemy hak do punktów przewidzianych fabrycznie przez producenta nadwozia, bez ingerencji w konstrukcję samochodu, a następnie podłączamy i programujemy moduł elektroniczny wiązki.
         </p>
+        <p>
+          Na koniec sprawdzamy działanie świateł przeciwmgielnych przyczepy, poprawność sygnału kierunkowskazów i cofania, a także - jeśli auto je posiada - adaptację czujników parkowania i systemów wspomagania do pracy z zaczepioną przyczepą. Zamontowany hak testujemy pod obciążeniem, żeby upewnić się, że mocowanie jest w pełni stabilne. Cały montaż zwykle zajmuje kilka godzin, w zależności od modelu samochodu i typu wiązki.
+        </p>
+
+        <h2>Hak holowniczy a czujniki parkowania i systemy wspomagania</h2>
+        <p>
+          Zamontowany hak holowniczy, a zwłaszcza zaczepiona do niego przyczepa lub bagażnik rowerowy, znajduje się dokładnie w polu działania tylnych czujników parkowania - bez odpowiedniej adaptacji auto będzie sygnalizować fałszywy alarm przy każdym cofaniu, nawet gdy droga za samochodem jest wolna. Dlatego przy montażu haka sprawdzamy, czy pojazd ma fabryczną funkcję rozpoznawania przyczepy (tzw. tryb holowania), i w razie potrzeby aktywujemy ją lub programujemy wiązkę tak, by czujniki tylne automatycznie wyłączały się lub ograniczały czułość po podłączeniu przyczepy.
+        </p>
+        <p>
+          Podobnie traktujemy inne systemy wspomagania - tempomat aktywny, asystenta pasa ruchu czy kamerę cofania. W nowszych samochodach z modułem CANbus wiązka dedykowana do haka komunikuje się bezpośrednio z komputerem pokładowym, dzięki czemu auto samo rozpoznaje podłączenie przyczepy i odpowiednio dostosowuje pracę tych systemów. W starszych modelach z wiązką uniwersalną taka automatyczna adaptacja zwykle nie jest możliwa, o czym informujemy klienta jeszcze przed montażem.
+        </p>
+
+        <h2>Jaki hak do bagażnika rowerowego</h2>
+        <p>
+          Do przewozu rowerów na bagażniku montowanym na kuli haka najlepiej sprawdza się hak wypinany - po zdjęciu bagażnika i kuli tylna część nadwozia wygląda estetycznie, a hak nie przeszkadza w parkowaniu czy myciu samochodu. Przy sporadycznym przewożeniu rowerów kilka razy w roku wystarczy zwykły hak wypinany z kulą odpinaną ręcznie; przy regularnym użytkowaniu wygodniejszy bywa hak z kulą odpinaną automatycznie, obsługiwaną z wnętrza kabiny.
+        </p>
+        <p>
+          Kluczowe znaczenie ma tu udźwig pionowy kuli (tzw. wartość S), czyli maksymalne obciążenie, jakie kula może bezpiecznie przenosić - to on, a nie sam fakt posiadania haka, decyduje o tym, ile rowerów i o jakiej wadze można bezpiecznie zamocować na bagażniku. Przy montażu haka zawsze informujemy klienta o dopuszczalnym obciążeniu pionowym konkretnego modelu, żeby dobór bagażnika rowerowego był zgodny z parametrami technicznymi samochodu.
+        </p>
+
+        <h2>Obszar działania</h2>
+        <p>Montaż haków holowniczych realizujemy dla klientów z Bielska-Białej i okolic:</p>
+        <div class="area-tags">
+          <span class="tag">Bielsko-Biała</span>
+          <span class="tag">Czechowice-Dziedzice</span>
+          <span class="tag">Żywiec</span>
+          <span class="tag">Cieszyn</span>
+          <span class="tag">Wilkowice</span>
+          <span class="tag">Szczyrk</span>
+        </div>
 
         <div class="related-links">
           <p class="related-links__title">Zobacz też</p>
@@ -196,9 +232,12 @@
           </div>
           <div>
             <p class="contact-item__title">Telefony</p>
-            <a href="tel:+48334862716" class="contact-item__line contact-item__line--link">+48 (33) 486 27 16</a>
-            <a href="tel:+48602597144" class="contact-item__line contact-item__line--link">+48 602 597 144</a>
-            <a href="tel:+48666228340" class="contact-item__line contact-item__line--link">+48 666 228 340</a>
+            <a href="tel:+48334862716" class="contact-item__line contact-item__line--link contact-item__line--primary">+48 (33) 486 27 16</a>
+            <div class="contact-item__phones-secondary">
+              <span class="contact-item__phones-secondary-label">Dodatkowe numery</span>
+              <a href="tel:+48602597144" class="contact-item__line contact-item__line--link contact-item__line--secondary">+48 602 597 144</a>
+              <a href="tel:+48666228340" class="contact-item__line contact-item__line--link contact-item__line--secondary">+48 666 228 340</a>
+            </div>
           </div>
         </div>
 
@@ -238,9 +277,9 @@
           <li>ul. Harfowa 8</li>
           <li>43-300 Bielsko-Biała</li>
           <li class="site-footer__list-gap">
-            <a href="tel:+48334862716">+48 (33) 486 27 16</a>
-            <a href="tel:+48602597144">+48 602 597 144</a>
-            <a href="tel:+48666228340">+48 666 228 340</a>
+            <a href="tel:+48334862716" class="site-footer__phone--primary">+48 (33) 486 27 16</a>
+            <a href="tel:+48602597144" class="site-footer__phone--secondary">+48 602 597 144</a>
+            <a href="tel:+48666228340" class="site-footer__phone--secondary">+48 666 228 340</a>
           </li>
           <li class="site-footer__list-gap"><a href="mailto:biuro@autodiag.bielsko.pl">biuro@autodiag.bielsko.pl</a></li>
         </ul>
@@ -258,7 +297,7 @@
     <div class="site-footer__bottom">
       <div class="site-footer__bottom-left">
         <p>© <span id="currentYear"></span> AUTO-DIAG Bielsko-Biała. Wszelkie prawa zastrzeżone.</p>
-        <button id="footerPrivacyBtn" class="site-footer__privacy-btn">Polityka prywatności i cookies</button>
+        <a href="/polityka-prywatnosci" class="site-footer__privacy-btn">Polityka prywatności i cookies</a>
       </div>
       <div class="site-footer__credit">
         <span>Wykonanie strony:</span>
@@ -268,81 +307,48 @@
   </div>
 </footer>
 
-<div class="privacy-modal" id="privacyModal" role="dialog" aria-modal="true" aria-labelledby="privacy-policy-title">
-  <div class="privacy-modal__backdrop" id="privacyBackdrop"></div>
-  <div class="privacy-modal__panel">
-    <div class="privacy-modal__header">
-      <h2 id="privacy-policy-title">Polityka Prywatności i Cookies</h2>
-      <button id="privacyCloseBtn" aria-label="Zamknij" class="privacy-modal__close">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
-      </button>
-    </div>
-
-    <div class="privacy-modal__body">
-      <div class="privacy-modal__content">
-        <p>Niniejsza polityka prywatności określa zasady przetwarzania i ochrony danych przekazanych przez użytkowników w związku z korzystaniem ze strony internetowej lpg.bielsko.pl, a także zasady wykorzystywania plików cookies.</p>
-
-        <div>
-          <h3>1. Administrator danych</h3>
-          <p>Administratorem danych jest F.H.U. AUTO DIAG Spółka Cywilna Wojciech Czernek, Krzysztof Urbańczyk, Sylwia Czernek, ul. Harfowa 8, 43-300 Bielsko-Biała, NIP: 9372562041, REGON: 240894508, e-mail: <a href="mailto:biuro@autodiag.bielsko.pl">biuro@autodiag.bielsko.pl</a>, tel. +48 (33) 486 27 16.</p>
-        </div>
-
-        <div>
-          <h3>2. Jakie dane przetwarzamy</h3>
-          <p>Strona nie posiada formularzy kontaktowych ani mechanizmów rejestracji, w związku z czym nie zbieramy danych osobowych podawanych bezpośrednio przez użytkownika. Jedyną informacją zapisywaną automatycznie podczas odwiedzin strony jest adres IP urządzenia, gromadzony standardowo w logach serwera hostingowego.</p>
-        </div>
-
-        <div>
-          <h3>3. Cel i podstawa przetwarzania</h3>
-          <p>Adres IP przetwarzany jest wyłącznie w celach technicznych i bezpieczeństwa (np. wykrywanie nadużyć, utrzymanie stabilności serwisu) na podstawie art. 6 ust. 1 lit. f Rozporządzenia RODO - prawnie uzasadniony interes administratora.</p>
-        </div>
-
-        <div>
-          <h3>4. Odbiorcy danych</h3>
-          <p>Dane mogą być udostępniane podmiotom zapewniającym hosting strony oraz - w związku z osadzonymi na stronie treściami Google Maps i YouTube, a po wyrażeniu zgody także usługą Google Analytics - firmie Google, która może zapisywać własne pliki cookies i przetwarzać dane (w tym adres IP) zgodnie ze swoją polityką prywatności. Google przetwarza dane w ramach infrastruktury obejmującej serwery zlokalizowane poza Europejskim Obszarem Gospodarczym (w tym w USA); przekazanie danych odbywa się w oparciu o stosowane przez Google mechanizmy zgodności z RODO (m.in. standardowe klauzule umowne).</p>
-        </div>
-
-        <div>
-          <h3>5. Prawa użytkownika</h3>
-          <p>Każdej osobie przysługuje prawo dostępu do swoich danych, ich sprostowania, usunięcia, ograniczenia przetwarzania, przenoszenia oraz wniesienia sprzeciwu wobec przetwarzania, a także prawo wniesienia skargi do Prezesa Urzędu Ochrony Danych Osobowych. W tym celu prosimy o kontakt na adres wskazany w pkt. 1.</p>
-        </div>
-
-        <div>
-          <h3>6. Pliki cookies</h3>
-          <p>Strona wykorzystuje pliki cookies (ciasteczka), czyli niewielkie pliki tekstowe zapisywane na urządzeniu użytkownika, w celu zapewnienia prawidłowego działania serwisu.</p>
-          <p>Wykorzystywane są następujące rodzaje plików cookies:</p>
-          <ul>
-            <li><span>Niezbędne</span> - konieczne do poprawnego funkcjonowania strony.</li>
-            <li><span>Podmiotów trzecich</span> - pochodzące od Google, związane z mapą Google Maps (sekcja Kontakt) oraz filmem z serwisu YouTube (sekcja z realizacjami). Treści te ładują się automatycznie wraz z odwiedzeniem strony.</li>
-            <li><span>Analityczne</span> - Google Analytics, wykorzystywane do zbierania anonimowych statystyk odwiedzin. Ładowane wyłącznie po wyrażeniu zgody w banerze widocznym przy pierwszej wizycie na stronie - bez zgody nie są zapisywane.</li>
-          </ul>
-          <p>Swoją zgodę na cookies analityczne możesz w każdej chwili zmienić: <button type="button" id="cookieConsentManageBtn" class="privacy-modal__content-btn">zarządzaj zgodą</button>.</p>
-          <p>Jeżeli nie wyrażasz zgody na zapisywanie plików cookies, możesz w każdej chwili zmienić ustawienia swojej przeglądarki internetowej, w tym zablokować ich zapisywanie lub usunąć już zapisane pliki. Ograniczenie stosowania plików cookies może wpłynąć na niektóre funkcjonalności strony (np. wyświetlanie mapy lub filmu).</p>
-        </div>
-
-        <div>
-          <h3>7. Kontakt</h3>
-          <p>W sprawach dotyczących ochrony danych osobowych i plików cookies prosimy o kontakt pod adresem <a href="mailto:biuro@autodiag.bielsko.pl">biuro@autodiag.bielsko.pl</a>.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
 <div class="cookie-consent" id="cookieConsent" role="dialog" aria-live="polite" aria-label="Zgoda na pliki cookie">
   <div class="cookie-consent__panel">
-    <p class="cookie-consent__text">
-      Używamy plików cookie do analizy ruchu na stronie (Google Analytics) - wyłącznie po Twojej zgodzie. Szczegóły w
-      <button type="button" id="footerPrivacyBtnConsent" class="cookie-consent__link">polityce prywatności</button>.
-    </p>
-    <div class="cookie-consent__actions">
-      <button type="button" id="cookieConsentReject" class="btn btn--outline cookie-consent__btn">Odrzuć</button>
-      <button type="button" id="cookieConsentAccept" class="btn btn--primary cookie-consent__btn">Akceptuję</button>
+    <div class="cookie-consent__row">
+      <p class="cookie-consent__text">
+        Używamy plików cookie, żeby strona działała poprawnie, mierzyć ruch w Google Analytics oraz odblokować mapę Google i filmy z YouTube osadzone na stronie. Szczegóły w <a href="/polityka-prywatnosci" class="cookie-consent__link">polityce prywatności</a>.
+      </p>
+      <div class="cookie-consent__actions">
+        <button type="button" id="cookieConsentReject" class="btn btn--outline cookie-consent__btn">Tylko niezbędne</button>
+        <button type="button" id="cookieConsentToggle" class="cookie-consent__toggle" aria-expanded="false" aria-controls="cookieConsentOptions">Dostosuj</button>
+        <button type="button" id="cookieConsentAccept" class="btn btn--primary cookie-consent__btn">Akceptuj wszystkie</button>
+      </div>
+    </div>
+
+    <div class="cookie-consent__options" id="cookieConsentOptions" hidden>
+      <label class="cookie-consent__option">
+        <input type="checkbox" checked disabled>
+        <span>
+          <strong>Niezbędne</strong>
+          <small>Zapamiętują Twój wybór zgody. Zawsze aktywne - bez nich baner pojawiałby się przy każdej wizycie.</small>
+        </span>
+      </label>
+      <label class="cookie-consent__option">
+        <input type="checkbox" id="cookieConsentAnalytics">
+        <span>
+          <strong>Analityczne</strong>
+          <small>Google Analytics - anonimowe statystyki odwiedzin strony.</small>
+        </span>
+      </label>
+      <label class="cookie-consent__option">
+        <input type="checkbox" id="cookieConsentEmbeds">
+        <span>
+          <strong>Mapy i filmy</strong>
+          <small>Odblokowują mapę Google (sekcja Kontakt) oraz filmy z YouTube (sekcja Realizacja).</small>
+        </span>
+      </label>
+      <button type="button" id="cookieConsentSave" class="btn btn--outline cookie-consent__btn cookie-consent__save">Zapisz wybór</button>
     </div>
   </div>
 </div>
 
 <script src="js/main.js"></script>
 <script src="js/consent.js"></script>
+<script src="js/tracking.js"></script>
 </body>
 </html>

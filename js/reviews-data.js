@@ -10,11 +10,6 @@ const reviewsData = [
     "text": "Szef zna się na robocie. Potrafi zdiagnozować perfekcyjnie usterkę nie dotyczaca instalacji LPG. Dziękuję. Polecam"
   },
   {
-    "author": "Andrzej Dziedzic",
-    "rating": 5,
-    "text": ""
-  },
-  {
     "author": "AutoSpot Łukasz Krawiec",
     "rating": 5,
     "text": "Bardzo pomocni i życzliwi\n⭐️⭐️⭐️⭐️⭐️"
@@ -40,11 +35,6 @@ const reviewsData = [
     "text": "Polecam, korzystałem z usług i wszystko elegancko"
   },
   {
-    "author": "W G",
-    "rating": 5,
-    "text": ""
-  },
-  {
     "author": "Barbara W.",
     "rating": 5,
     "text": "Polecam ten serwis. Panowie znają się na swojej pracy, doradzą.\nObsługa miła i przede wszystkim kompetentna."
@@ -60,11 +50,6 @@ const reviewsData = [
     "text": "Panowie mechanicy znają się na regulacji\nPolecam."
   },
   {
-    "author": "Maciek M",
-    "rating": 5,
-    "text": ""
-  },
-  {
     "author": "Wojciech Honkisz",
     "rating": 5,
     "text": "Montaż haka w aucie z grupy VAG z pełną adaptacją oryginalnego sterownika, wszystko tak jak należy i w rozsądnej cenie\nPolecam"
@@ -78,11 +63,6 @@ const reviewsData = [
     "author": "Serhii Neroda",
     "rating": 5,
     "text": "Dobrzy specjaliści HBO"
-  },
-  {
-    "author": "Grzegorz Olma",
-    "rating": 5,
-    "text": ""
   },
   {
     "author": "Szymon Kowalski",
@@ -180,46 +160,6 @@ const reviewsData = [
     "text": "Profesjonaliści"
   },
   {
-    "author": "Grzegorz Królewski",
-    "rating": 5,
-    "text": ""
-  },
-  {
-    "author": "Ryszard Ploskonka",
-    "rating": 5,
-    "text": ""
-  },
-  {
-    "author": "Ignacy Byrdziak",
-    "rating": 5,
-    "text": ""
-  },
-  {
-    "author": "Eugeniusz Galazka",
-    "rating": 5,
-    "text": ""
-  },
-  {
-    "author": "4Pickup",
-    "rating": 5,
-    "text": ""
-  },
-  {
-    "author": "Lunch Fast",
-    "rating": 5,
-    "text": ""
-  },
-  {
-    "author": "Александр Егоров",
-    "rating": 5,
-    "text": ""
-  },
-  {
-    "author": "Grzegorz Cholewka",
-    "rating": 5,
-    "text": ""
-  },
-  {
     "author": "Przemysław Ziółkowski",
     "rating": 5,
     "text": "Korzystałem z usług z polecenia i nie żałuję. Montaż wideorejestratora przód i tył  zamontowany perfekcyjnie! Na duży + zauważyłem dołożoną zaślepkę gdzie mogła woda się w dostawać jestem megaa zadowolony. Wszystko schludnie zrobione no nie ma do czego się doczepić. Pozdrawiam :)"
@@ -298,81 +238,6 @@ const reviewsData = [
     "author": "Mariusz Bogdanski",
     "rating": 5,
     "text": "Polecam"
-  },
-  {
-    "author": "Kamil Kamil",
-    "rating": 5,
-    "text": ""
-  },
-  {
-    "author": "Darek Markowski",
-    "rating": 5,
-    "text": ""
-  },
-  {
-    "author": "redrex84",
-    "rating": 5,
-    "text": ""
-  },
-  {
-    "author": "Adrian",
-    "rating": 5,
-    "text": ""
-  },
-  {
-    "author": "Sedat Keskin",
-    "rating": 5,
-    "text": ""
-  },
-  {
-    "author": "mariusz sablik",
-    "rating": 5,
-    "text": ""
-  },
-  {
-    "author": "Lukasz W",
-    "rating": 5,
-    "text": ""
-  },
-  {
-    "author": "Kasia Mydlarz",
-    "rating": 5,
-    "text": ""
-  },
-  {
-    "author": "Tomasz Kubica",
-    "rating": 5,
-    "text": ""
-  },
-  {
-    "author": "Tomasz Naglik",
-    "rating": 5,
-    "text": ""
-  },
-  {
-    "author": "Mirosław Szurdyga",
-    "rating": 5,
-    "text": ""
-  },
-  {
-    "author": "KK KK",
-    "rating": 5,
-    "text": ""
-  },
-  {
-    "author": "Sebastian Białek",
-    "rating": 5,
-    "text": ""
-  },
-  {
-    "author": "Grzegorz fx",
-    "rating": 5,
-    "text": ""
-  },
-  {
-    "author": "And Q",
-    "rating": 5,
-    "text": ""
   },
   {
     "author": "Norbert Markiel",
@@ -550,96 +415,6 @@ const reviewsData = [
     "text": "Profesor!"
   },
   {
-    "author": "Sebastian Musick",
-    "rating": 5,
-    "text": ""
-  },
-  {
-    "author": "andrzej kokora",
-    "rating": 5,
-    "text": ""
-  },
-  {
-    "author": "Wojtek Wojtek",
-    "rating": 5,
-    "text": ""
-  },
-  {
-    "author": "Marek Cembala",
-    "rating": 5,
-    "text": ""
-  },
-  {
-    "author": "Андрей Стасюк",
-    "rating": 5,
-    "text": ""
-  },
-  {
-    "author": "Michał Moc",
-    "rating": 5,
-    "text": ""
-  },
-  {
-    "author": "Paweł Hodana",
-    "rating": 5,
-    "text": ""
-  },
-  {
-    "author": "Piotr Powrosławski",
-    "rating": 5,
-    "text": ""
-  },
-  {
-    "author": "leny8205",
-    "rating": 5,
-    "text": ""
-  },
-  {
-    "author": "Karol Krutak",
-    "rating": 5,
-    "text": ""
-  },
-  {
-    "author": "Dariusz Zieleźnik",
-    "rating": 5,
-    "text": ""
-  },
-  {
-    "author": "Błażej Sawiński",
-    "rating": 5,
-    "text": ""
-  },
-  {
-    "author": "Marcin Kolarzyk",
-    "rating": 5,
-    "text": ""
-  },
-  {
-    "author": "Wojciech Kijanka",
-    "rating": 5,
-    "text": ""
-  },
-  {
-    "author": "Marek Rytlewski",
-    "rating": 5,
-    "text": ""
-  },
-  {
-    "author": "Piotr Szarek",
-    "rating": 5,
-    "text": ""
-  },
-  {
-    "author": "Krzysztof S.",
-    "rating": 5,
-    "text": ""
-  },
-  {
-    "author": "Volodymyr Sikachevskyy",
-    "rating": 5,
-    "text": ""
-  },
-  {
     "author": "Wowekk",
     "rating": 5,
     "text": "Najlepszy gazownik w Bielsku i okolicach. 340 konne Q50 śmiga na Landi Renzo od roku aż miło,polecam."
@@ -800,119 +575,9 @@ const reviewsData = [
     "text": "Polecam"
   },
   {
-    "author": "Mateusz Kos",
+    "author": "Mariusz Bogdanski",
     "rating": 5,
-    "text": ""
-  },
-  {
-    "author": "Adam Rzadek",
-    "rating": 5,
-    "text": ""
-  },
-  {
-    "author": "Andrzej Kamiński",
-    "rating": 5,
-    "text": ""
-  },
-  {
-    "author": "Kamil Komendera",
-    "rating": 5,
-    "text": ""
-  },
-  {
-    "author": "Kamil Polok (Hondziarz69)",
-    "rating": 5,
-    "text": ""
-  },
-  {
-    "author": "Klaudiusz Fuchs",
-    "rating": 5,
-    "text": ""
-  },
-  {
-    "author": "Marcin Sadlik",
-    "rating": 5,
-    "text": ""
-  },
-  {
-    "author": "Malgorzata Pytlarz",
-    "rating": 5,
-    "text": ""
-  },
-  {
-    "author": "Kacper Drewniak",
-    "rating": 5,
-    "text": ""
-  },
-  {
-    "author": "Mark Production 3",
-    "rating": 5,
-    "text": ""
-  },
-  {
-    "author": "Dariusz Wandzel",
-    "rating": 5,
-    "text": ""
-  },
-  {
-    "author": "P S",
-    "rating": 5,
-    "text": ""
-  },
-  {
-    "author": "Michał Barcikowski",
-    "rating": 5,
-    "text": ""
-  },
-  {
-    "author": "Artur Dudek",
-    "rating": 5,
-    "text": ""
-  },
-  {
-    "author": "Mateusz",
-    "rating": 5,
-    "text": ""
-  },
-  {
-    "author": "Wojtek Targosz",
-    "rating": 5,
-    "text": ""
-  },
-  {
-    "author": "Adrian Wiera",
-    "rating": 5,
-    "text": ""
-  },
-  {
-    "author": "Dariusz Honkisz",
-    "rating": 5,
-    "text": ""
-  },
-  {
-    "author": "Mirosław Tamul",
-    "rating": 5,
-    "text": ""
-  },
-  {
-    "author": "Wojtek",
-    "rating": 5,
-    "text": ""
-  },
-  {
-    "author": "Marko Polo",
-    "rating": 5,
-    "text": ""
-  },
-  {
-    "author": "MirekGZ Kabanos",
-    "rating": 5,
-    "text": ""
-  },
-  {
-    "author": "Tomasz Pajestka",
-    "rating": 5,
-    "text": ""
+    "text": "Polecam, konkretni fachowcy"
   },
   {
     "author": "Paweł",
@@ -1113,136 +778,6 @@ const reviewsData = [
     "author": "Adrian Oskar",
     "rating": 5,
     "text": "Polecam"
-  },
-  {
-    "author": "Selewerst Garay",
-    "rating": 5,
-    "text": ""
-  },
-  {
-    "author": "Grzegorz M.",
-    "rating": 5,
-    "text": ""
-  },
-  {
-    "author": "Andrzej wróbel",
-    "rating": 5,
-    "text": ""
-  },
-  {
-    "author": "Maciej Zdrowak",
-    "rating": 5,
-    "text": ""
-  },
-  {
-    "author": "161AT117 Martin",
-    "rating": 5,
-    "text": ""
-  },
-  {
-    "author": "Marek Machlowski",
-    "rating": 5,
-    "text": ""
-  },
-  {
-    "author": "Jacek Kowalski",
-    "rating": 5,
-    "text": ""
-  },
-  {
-    "author": "damian forma",
-    "rating": 5,
-    "text": ""
-  },
-  {
-    "author": "Tomek Szopa",
-    "rating": 5,
-    "text": ""
-  },
-  {
-    "author": "Zuve M.",
-    "rating": 5,
-    "text": ""
-  },
-  {
-    "author": "Marek Wymysło (Marek)",
-    "rating": 5,
-    "text": ""
-  },
-  {
-    "author": "Marcin Juras",
-    "rating": 5,
-    "text": ""
-  },
-  {
-    "author": "Adam Fic",
-    "rating": 5,
-    "text": ""
-  },
-  {
-    "author": "Paweł Sajdak",
-    "rating": 5,
-    "text": ""
-  },
-  {
-    "author": "Krzysztof Foksinski",
-    "rating": 5,
-    "text": ""
-  },
-  {
-    "author": "Sławek Barcik",
-    "rating": 5,
-    "text": ""
-  },
-  {
-    "author": "Krzysztof Koncewicz",
-    "rating": 5,
-    "text": ""
-  },
-  {
-    "author": "agn zim",
-    "rating": 5,
-    "text": ""
-  },
-  {
-    "author": "Wojciech Sd",
-    "rating": 5,
-    "text": ""
-  },
-  {
-    "author": "mirek kowalczyk",
-    "rating": 5,
-    "text": ""
-  },
-  {
-    "author": "Pawel Fudala",
-    "rating": 5,
-    "text": ""
-  },
-  {
-    "author": "Hadsonukes",
-    "rating": 5,
-    "text": ""
-  },
-  {
-    "author": "Krzysiek L.",
-    "rating": 5,
-    "text": ""
-  },
-  {
-    "author": "Paweł Jacek Smolec",
-    "rating": 5,
-    "text": ""
-  },
-  {
-    "author": "Maciej Muras",
-    "rating": 5,
-    "text": ""
-  },
-  {
-    "author": "Widmowy",
-    "rating": 5,
-    "text": ""
   },
   {
     "author": "Pawel BB",
@@ -1498,5 +1033,480 @@ const reviewsData = [
     "author": "Marek",
     "rating": 5,
     "text": "super robota Panowie dbają o powierzone samochody jak o własne dzieci"
+  },
+  {
+    "author": "Andrzej Dziedzic",
+    "rating": 5,
+    "text": ""
+  },
+  {
+    "author": "W G",
+    "rating": 5,
+    "text": ""
+  },
+  {
+    "author": "Maciek M",
+    "rating": 5,
+    "text": ""
+  },
+  {
+    "author": "Grzegorz Olma",
+    "rating": 5,
+    "text": ""
+  },
+  {
+    "author": "Grzegorz Królewski",
+    "rating": 5,
+    "text": ""
+  },
+  {
+    "author": "Ryszard Ploskonka",
+    "rating": 5,
+    "text": ""
+  },
+  {
+    "author": "Ignacy Byrdziak",
+    "rating": 5,
+    "text": ""
+  },
+  {
+    "author": "Eugeniusz Galazka",
+    "rating": 5,
+    "text": ""
+  },
+  {
+    "author": "4Pickup",
+    "rating": 5,
+    "text": ""
+  },
+  {
+    "author": "Lunch Fast",
+    "rating": 5,
+    "text": ""
+  },
+  {
+    "author": "Александр Егоров",
+    "rating": 5,
+    "text": ""
+  },
+  {
+    "author": "Grzegorz Cholewka",
+    "rating": 5,
+    "text": ""
+  },
+  {
+    "author": "Kamil Kamil",
+    "rating": 5,
+    "text": ""
+  },
+  {
+    "author": "Darek Markowski",
+    "rating": 5,
+    "text": ""
+  },
+  {
+    "author": "redrex84",
+    "rating": 5,
+    "text": ""
+  },
+  {
+    "author": "Adrian",
+    "rating": 5,
+    "text": ""
+  },
+  {
+    "author": "Sedat Keskin",
+    "rating": 5,
+    "text": ""
+  },
+  {
+    "author": "mariusz sablik",
+    "rating": 5,
+    "text": ""
+  },
+  {
+    "author": "Lukasz W",
+    "rating": 5,
+    "text": ""
+  },
+  {
+    "author": "Kasia Mydlarz",
+    "rating": 5,
+    "text": ""
+  },
+  {
+    "author": "Tomasz Kubica",
+    "rating": 5,
+    "text": ""
+  },
+  {
+    "author": "Tomasz Naglik",
+    "rating": 5,
+    "text": ""
+  },
+  {
+    "author": "Mirosław Szurdyga",
+    "rating": 5,
+    "text": ""
+  },
+  {
+    "author": "KK KK",
+    "rating": 5,
+    "text": ""
+  },
+  {
+    "author": "Sebastian Białek",
+    "rating": 5,
+    "text": ""
+  },
+  {
+    "author": "Grzegorz fx",
+    "rating": 5,
+    "text": ""
+  },
+  {
+    "author": "And Q",
+    "rating": 5,
+    "text": ""
+  },
+  {
+    "author": "Sebastian Musick",
+    "rating": 5,
+    "text": ""
+  },
+  {
+    "author": "andrzej kokora",
+    "rating": 5,
+    "text": ""
+  },
+  {
+    "author": "Wojtek Wojtek",
+    "rating": 5,
+    "text": ""
+  },
+  {
+    "author": "Marek Cembala",
+    "rating": 5,
+    "text": ""
+  },
+  {
+    "author": "Андрей Стасюк",
+    "rating": 5,
+    "text": ""
+  },
+  {
+    "author": "Michał Moc",
+    "rating": 5,
+    "text": ""
+  },
+  {
+    "author": "Paweł Hodana",
+    "rating": 5,
+    "text": ""
+  },
+  {
+    "author": "Piotr Powrosławski",
+    "rating": 5,
+    "text": ""
+  },
+  {
+    "author": "leny8205",
+    "rating": 5,
+    "text": ""
+  },
+  {
+    "author": "Karol Krutak",
+    "rating": 5,
+    "text": ""
+  },
+  {
+    "author": "Dariusz Zieleźnik",
+    "rating": 5,
+    "text": ""
+  },
+  {
+    "author": "Błażej Sawiński",
+    "rating": 5,
+    "text": ""
+  },
+  {
+    "author": "Marcin Kolarzyk",
+    "rating": 5,
+    "text": ""
+  },
+  {
+    "author": "Wojciech Kijanka",
+    "rating": 5,
+    "text": ""
+  },
+  {
+    "author": "Marek Rytlewski",
+    "rating": 5,
+    "text": ""
+  },
+  {
+    "author": "Piotr Szarek",
+    "rating": 5,
+    "text": ""
+  },
+  {
+    "author": "Krzysztof S.",
+    "rating": 5,
+    "text": ""
+  },
+  {
+    "author": "Volodymyr Sikachevskyy",
+    "rating": 5,
+    "text": ""
+  },
+  {
+    "author": "Mateusz Kos",
+    "rating": 5,
+    "text": ""
+  },
+  {
+    "author": "Adam Rzadek",
+    "rating": 5,
+    "text": ""
+  },
+  {
+    "author": "Andrzej Kamiński",
+    "rating": 5,
+    "text": ""
+  },
+  {
+    "author": "Kamil Komendera",
+    "rating": 5,
+    "text": ""
+  },
+  {
+    "author": "Kamil Polok (Hondziarz69)",
+    "rating": 5,
+    "text": ""
+  },
+  {
+    "author": "Klaudiusz Fuchs",
+    "rating": 5,
+    "text": ""
+  },
+  {
+    "author": "Marcin Sadlik",
+    "rating": 5,
+    "text": ""
+  },
+  {
+    "author": "Malgorzata Pytlarz",
+    "rating": 5,
+    "text": ""
+  },
+  {
+    "author": "Kacper Drewniak",
+    "rating": 5,
+    "text": ""
+  },
+  {
+    "author": "Mark Production 3",
+    "rating": 5,
+    "text": ""
+  },
+  {
+    "author": "Dariusz Wandzel",
+    "rating": 5,
+    "text": ""
+  },
+  {
+    "author": "P S",
+    "rating": 5,
+    "text": ""
+  },
+  {
+    "author": "Michał Barcikowski",
+    "rating": 5,
+    "text": ""
+  },
+  {
+    "author": "Artur Dudek",
+    "rating": 5,
+    "text": ""
+  },
+  {
+    "author": "Mateusz",
+    "rating": 5,
+    "text": ""
+  },
+  {
+    "author": "Wojtek Targosz",
+    "rating": 5,
+    "text": ""
+  },
+  {
+    "author": "Adrian Wiera",
+    "rating": 5,
+    "text": ""
+  },
+  {
+    "author": "Dariusz Honkisz",
+    "rating": 5,
+    "text": ""
+  },
+  {
+    "author": "Mirosław Tamul",
+    "rating": 5,
+    "text": ""
+  },
+  {
+    "author": "Wojtek",
+    "rating": 5,
+    "text": ""
+  },
+  {
+    "author": "Marko Polo",
+    "rating": 5,
+    "text": ""
+  },
+  {
+    "author": "MirekGZ Kabanos",
+    "rating": 5,
+    "text": ""
+  },
+  {
+    "author": "Tomasz Pajestka",
+    "rating": 5,
+    "text": ""
+  },
+  {
+    "author": "Selewerst Garay",
+    "rating": 5,
+    "text": ""
+  },
+  {
+    "author": "Grzegorz M.",
+    "rating": 5,
+    "text": ""
+  },
+  {
+    "author": "Andrzej wróbel",
+    "rating": 5,
+    "text": ""
+  },
+  {
+    "author": "Maciej Zdrowak",
+    "rating": 5,
+    "text": ""
+  },
+  {
+    "author": "161AT117 Martin",
+    "rating": 5,
+    "text": ""
+  },
+  {
+    "author": "Marek Machlowski",
+    "rating": 5,
+    "text": ""
+  },
+  {
+    "author": "Jacek Kowalski",
+    "rating": 5,
+    "text": ""
+  },
+  {
+    "author": "damian forma",
+    "rating": 5,
+    "text": ""
+  },
+  {
+    "author": "Tomek Szopa",
+    "rating": 5,
+    "text": ""
+  },
+  {
+    "author": "Zuve M.",
+    "rating": 5,
+    "text": ""
+  },
+  {
+    "author": "Marek Wymysło (Marek)",
+    "rating": 5,
+    "text": ""
+  },
+  {
+    "author": "Marcin Juras",
+    "rating": 5,
+    "text": ""
+  },
+  {
+    "author": "Adam Fic",
+    "rating": 5,
+    "text": ""
+  },
+  {
+    "author": "Paweł Sajdak",
+    "rating": 5,
+    "text": ""
+  },
+  {
+    "author": "Krzysztof Foksinski",
+    "rating": 5,
+    "text": ""
+  },
+  {
+    "author": "Sławek Barcik",
+    "rating": 5,
+    "text": ""
+  },
+  {
+    "author": "Krzysztof Koncewicz",
+    "rating": 5,
+    "text": ""
+  },
+  {
+    "author": "agn zim",
+    "rating": 5,
+    "text": ""
+  },
+  {
+    "author": "Wojciech Sd",
+    "rating": 5,
+    "text": ""
+  },
+  {
+    "author": "mirek kowalczyk",
+    "rating": 5,
+    "text": ""
+  },
+  {
+    "author": "Pawel Fudala",
+    "rating": 5,
+    "text": ""
+  },
+  {
+    "author": "Hadsonukes",
+    "rating": 5,
+    "text": ""
+  },
+  {
+    "author": "Krzysiek L.",
+    "rating": 5,
+    "text": ""
+  },
+  {
+    "author": "Paweł Jacek Smolec",
+    "rating": 5,
+    "text": ""
+  },
+  {
+    "author": "Maciej Muras",
+    "rating": 5,
+    "text": ""
+  },
+  {
+    "author": "Widmowy",
+    "rating": 5,
+    "text": ""
+  },
+  {
+    "author": "Stanisław",
+    "rating": 5,
+    "text": ""
   }
 ];

@@ -3,11 +3,14 @@
   Header always set X-Frame-Options "SAMEORIGIN"
   Header always set Referrer-Policy "strict-origin-when-cross-origin"
   Header always set Permissions-Policy "camera=(), microphone=(), geolocation=()"
-  Header always set Strict-Transport-Security "max-age=63072000; includeSubDomains; preload"
-  Header always set Content-Security-Policy "default-src 'self'; script-src 'self' 'sha256-dFW9WZMnP1u73UmacfG4TgtdPejzSVvhpmbxXlUPKW0=' https://www.googletagmanager.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://*.google-analytics.com; media-src 'self'; font-src 'self'; connect-src 'self' https://www.googletagmanager.com https://*.google-analytics.com https://*.analytics.google.com; frame-src https://www.youtube.com https://www.youtube-nocookie.com https://www.google.com; frame-ancestors 'self'; base-uri 'self'; form-action 'self'"
+  Header always set Strict-Transport-Security "max-age=63072000; includeSubDomains; preload" env=HTTPS
+  Header always set Content-Security-Policy "default-src 'self'; script-src 'self' https://www.googletagmanager.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://*.google-analytics.com; media-src 'self'; font-src 'self'; connect-src 'self' https://www.googletagmanager.com https://*.google-analytics.com https://*.analytics.google.com; frame-src https://www.youtube.com https://www.youtube-nocookie.com https://www.google.com; frame-ancestors 'self'; base-uri 'self'; form-action 'self'"
 </IfModule>
 
 RewriteEngine On
+
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://lpg.bielsko.pl/$1 [R=301,L]
 
 RewriteCond %{HTTP_HOST} ^www\.lpg\.bielsko\.pl$ [NC]
 RewriteRule ^(.*)$ https://lpg.bielsko.pl/$1 [R=301,L]
@@ -39,11 +42,14 @@ RewriteRule ^blokady\.html$       https://lpg.bielsko.pl/elektronika-alarmy [R=3
 RewriteRule ^bolcowe\.html$       https://lpg.bielsko.pl/elektronika-alarmy [R=301,L]
 RewriteRule ^ryglowe\.html$       https://lpg.bielsko.pl/elektronika-alarmy [R=301,L]
 
+RewriteCond %{REQUEST_URI} !^/$
+RewriteRule ^(.+)/$ /$1 [R=301,L]
+
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond $1 !^404$
 RewriteCond %{REQUEST_FILENAME}.html -f
-RewriteRule ^([^./]+)/?$ $1.html [L]
+RewriteRule ^([^./]+)$ $1.html [L]
 
 RewriteCond %{ENV:REDIRECT_STATUS} ^$
 RewriteCond %{THE_REQUEST} \s/+([^.\s?]+)\.html[\s?] [NC]
@@ -56,7 +62,11 @@ DirectoryIndex index.html
 Options -Indexes
 
 <IfModule mod_deflate.c>
-  AddOutputFilterByType DEFLATE text/html text/css application/javascript text/javascript application/json image/svg+xml
+  AddOutputFilterByType DEFLATE text/html text/css application/javascript text/javascript application/json image/svg+xml application/xml application/xhtml+xml application/rss+xml image/x-icon font/woff2
+</IfModule>
+
+<IfModule mod_brotli.c>
+  AddOutputFilterByType BROTLI_COMPRESS text/html text/css application/javascript text/javascript application/json application/xml image/svg+xml
 </IfModule>
 
 <IfModule mod_expires.c>
