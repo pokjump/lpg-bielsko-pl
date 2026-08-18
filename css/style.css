@@ -1012,3 +1012,19 @@ img, video { -webkit-user-drag: none; user-select: none; -webkit-user-select: no
 }
 .embed-placeholder__text { color: var(--fg-muted); font-size: 0.875rem; font-weight: 300; line-height: 1.6; max-width: 26rem; }
 .lpg-calc__result--accent .lpg-calc__result-value { color: var(--accent); }
+
+/* ---------- galeria: teaser (strona główna) i placeholder (podstrona) ---------- */
+
+.gallery-teaser { position: relative; overflow: hidden; padding-block: 5rem; background-color: var(--surface-lowest); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+@media (min-width: 768px) { .gallery-teaser { padding-block: 7rem; } }
+.gallery-teaser__heading { text-align: center; margin-bottom: 3rem; }
+
+.gallery-soon { position: relative; display: flex; flex-direction: column; align-items: center; gap: 1.25rem; text-align: center; padding: 3.5rem 2rem; border: 1px dashed var(--border-strong); background-color: var(--bg-raised); }
+.gallery-soon__icon { height: 3rem; width: 3rem; color: var(--accent); opacity: 0.8; }
+.gallery-soon__badge { font-family: var(--font-head); font-weight: 700; font-size: 1.125rem; text-transform: uppercase; letter-spacing: -0.01em; color: var(--fg); }
+.gallery-soon__text { color: var(--fg-muted); font-size: 0.9375rem; font-weight: 300; line-height: 1.7; max-width: 30rem; }
+
+.gallery-soon--lg { padding: 5rem 2rem; }
+.gallery-soon--lg .gallery-soon__icon { height: 3.5rem; width: 3.5rem; }
+.gallery-soon--lg .gallery-soon__badge { font-size: 1.5rem; }
+@media (min-width: 768px) { .gallery-soon--lg .gallery-soon__badge { font-size: 1.75rem; } }
