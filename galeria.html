@@ -32,7 +32,7 @@
 <link rel="manifest" href="icons/site.webmanifest">
 
 <link rel="stylesheet" href="css/fonts.css?v=514b7df2">
-<link rel="stylesheet" href="css/style.css?v=3689c1ae">
+<link rel="stylesheet" href="css/style.css?v=a144e831">
 
 <script type="application/ld+json">
 {
@@ -126,28 +126,28 @@
     <div class="gallery-grid reveal">
       <div class="gallery-card">
         <div class="gallery-card__photos">
-          <a href="images/gallery/lpg1.webp" target="_blank" rel="noopener">
-            <img src="images/gallery/lpg1.webp" alt="Montaż instalacji LPG Lovato Easy Fast - komora silnika 5.7 V8" width="1600" height="1200" loading="lazy">
-          </a>
-          <a href="images/gallery/lpg2.webp" target="_blank" rel="noopener">
-            <img src="images/gallery/lpg2.webp" alt="Montaż instalacji LPG Lovato Easy Fast - komora silnika 5.7 V8" width="1200" height="1600" loading="lazy">
-          </a>
+          <button type="button" data-lightbox="images/gallery/lpg1-full.jpg" data-lightbox-alt="Montaż instalacji LPG Lovato Easy Fast - Toyota Sequoia 5.7 V8">
+            <img src="images/gallery/lpg1.webp" alt="Montaż instalacji LPG Lovato Easy Fast - Toyota Sequoia 5.7 V8" width="1000" height="750" loading="lazy">
+          </button>
+          <button type="button" data-lightbox="images/gallery/lpg2-full.jpg" data-lightbox-alt="Montaż instalacji LPG Lovato Easy Fast - Toyota Sequoia 5.7 V8">
+            <img src="images/gallery/lpg2.webp" alt="Montaż instalacji LPG Lovato Easy Fast - Toyota Sequoia 5.7 V8" width="750" height="1000" loading="lazy">
+          </button>
         </div>
         <div class="gallery-card__body">
           <span class="tag">Instalacje LPG</span>
-          <h3 class="gallery-card__title">Montaż instalacji LPG - silnik 5.7 V8</h3>
-          <p class="gallery-card__text">Montaż instalacji gazowej Lovato Easy Fast w silniku benzynowym 5.7L V8, wraz z reduktorem i pozostałymi podzespołami w komorze silnika.</p>
+          <h3 class="gallery-card__title">Montaż instalacji LPG - Toyota Sequoia 5.7 V8</h3>
+          <p class="gallery-card__text">Montaż instalacji gazowej Lovato Easy Fast w silniku benzynowym 5.7L V8 (Toyota Sequoia), wraz z reduktorem i pozostałymi podzespołami w komorze silnika.</p>
         </div>
       </div>
 
       <div class="gallery-card">
         <div class="gallery-card__photos">
-          <a href="images/gallery/hak1.webp" target="_blank" rel="noopener">
-            <img src="images/gallery/hak1.webp" alt="Zamontowany hak holowniczy Oris" width="1152" height="864" loading="lazy">
-          </a>
-          <a href="images/gallery/hak2.webp" target="_blank" rel="noopener">
-            <img src="images/gallery/hak2.webp" alt="Zamontowany hak holowniczy Oris" width="1152" height="864" loading="lazy">
-          </a>
+          <button type="button" data-lightbox="images/gallery/hak1-full.jpg" data-lightbox-alt="Zamontowany hak holowniczy Oris">
+            <img src="images/gallery/hak1.webp" alt="Zamontowany hak holowniczy Oris" width="1000" height="750" loading="lazy">
+          </button>
+          <button type="button" data-lightbox="images/gallery/hak2-full.jpg" data-lightbox-alt="Zamontowany hak holowniczy Oris">
+            <img src="images/gallery/hak2.webp" alt="Zamontowany hak holowniczy Oris" width="1000" height="750" loading="lazy">
+          </button>
         </div>
         <div class="gallery-card__body">
           <span class="tag">Haki holownicze</span>
@@ -260,7 +260,17 @@
   </div>
 </div>
 
+<div class="lightbox" id="lightbox" hidden>
+  <div class="lightbox__figure">
+    <button type="button" class="lightbox__close" id="lightboxClose" aria-label="Zamknij podgląd zdjęcia">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+    </button>
+    <img class="lightbox__img" id="lightboxImg" src="" alt="">
+  </div>
+</div>
+
 <script src="js/main.js?v=2088a150"></script>
+<script src="js/lightbox.js?v=13a2233c"></script>
 <script src="js/consent.js?v=d1dc2323"></script>
 <script src="js/tracking.js?v=b3a6cda3"></script>
 </body>

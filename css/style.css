@@ -1031,9 +1031,31 @@ img, video { -webkit-user-drag: none; user-select: none; -webkit-user-select: no
 .gallery-card { border: 1px solid var(--border-strong); background-color: var(--bg-raised); overflow: hidden; transition: border-color 0.2s ease; }
 .gallery-card:hover { border-color: var(--accent); }
 .gallery-card__photos { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2px; background-color: var(--border-strong); }
-.gallery-card__photos a { display: block; aspect-ratio: 4 / 3; overflow: hidden; background-color: var(--surface-lowest); }
+.gallery-card__photos button { display: block; width: 100%; aspect-ratio: 4 / 3; overflow: hidden; background-color: var(--surface-lowest); padding: 0; border: 0; cursor: zoom-in; }
 .gallery-card__photos img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.5s ease; }
-.gallery-card__photos a:hover img { transform: scale(1.06); }
+.gallery-card__photos button:hover img { transform: scale(1.06); }
 .gallery-card__body { padding: 1.25rem 1.5rem 1.5rem; }
 .gallery-card__title { font-family: var(--font-head); font-weight: 700; font-size: 1.0625rem; color: var(--fg); margin-bottom: 0.5rem; }
 .gallery-card__text { color: var(--fg-muted); font-size: 0.875rem; font-weight: 300; line-height: 1.6; }
+
+/* ---------- lightbox (podgląd zdjęcia w pełnej rozdzielczości) ---------- */
+
+.lightbox {
+  position: fixed; inset: 0; z-index: 100;
+  display: flex; align-items: center; justify-content: center; padding: 2rem;
+  background-color: rgba(6, 8, 10, 0.92);
+  opacity: 0; visibility: hidden;
+  transition: opacity 0.25s ease, visibility 0s linear 0.25s;
+}
+.lightbox.is-visible { opacity: 1; visibility: visible; transition-delay: 0s; }
+.lightbox__figure { position: relative; max-width: min(92vw, 1400px); max-height: 88vh; }
+.lightbox__img { display: block; max-width: 100%; max-height: 88vh; width: auto; height: auto; border: 1px solid var(--border-strong); background-color: var(--bg-raised); }
+.lightbox__close {
+  position: absolute; top: -3rem; right: 0;
+  display: flex; align-items: center; justify-content: center;
+  width: 2.5rem; height: 2.5rem; border: 1px solid var(--border-strong); border-radius: var(--r-sm);
+  background-color: var(--bg-raised); color: var(--fg); cursor: pointer;
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+.lightbox__close:hover { border-color: var(--accent); color: var(--accent); }
+.lightbox__close svg { width: 1.25rem; height: 1.25rem; }
