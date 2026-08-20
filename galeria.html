@@ -32,7 +32,7 @@
 <link rel="manifest" href="icons/site.webmanifest">
 
 <link rel="stylesheet" href="css/fonts.css?v=514b7df2">
-<link rel="stylesheet" href="css/style.css?v=a144e831">
+<link rel="stylesheet" href="css/style.css?v=31fb54d4">
 
 <script type="application/ld+json">
 {
@@ -134,6 +134,7 @@
           </button>
         </div>
         <div class="gallery-card__body">
+          <img class="gallery-card__brand" src="images/lovatologo.webp" alt="Lovato" width="88" height="30" loading="lazy">
           <span class="tag">Instalacje LPG</span>
           <h3 class="gallery-card__title">Montaż instalacji LPG - Toyota Sequoia 5.7 V8</h3>
           <p class="gallery-card__text">Montaż instalacji gazowej Lovato Easy Fast w silniku benzynowym 5.7L V8 (Toyota Sequoia), wraz z reduktorem i pozostałymi podzespołami w komorze silnika.</p>
@@ -150,6 +151,7 @@
           </button>
         </div>
         <div class="gallery-card__body">
+          <img class="gallery-card__brand" src="images/oris.webp" alt="Oris" width="70" height="27" loading="lazy">
           <span class="tag">Haki holownicze</span>
           <h3 class="gallery-card__title">Montaż haka holowniczego Oris</h3>
           <p class="gallery-card__text">Montaż haka holowniczego marki Oris - solidne mocowanie, gniazdo elektryczne i estetyczne wykończenie.</p>
@@ -265,12 +267,18 @@
     <button type="button" class="lightbox__close" id="lightboxClose" aria-label="Zamknij podgląd zdjęcia">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
     </button>
+    <button type="button" class="lightbox__nav lightbox__nav--prev" id="lightboxPrev" aria-label="Poprzednie zdjęcie">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/></svg>
+    </button>
+    <button type="button" class="lightbox__nav lightbox__nav--next" id="lightboxNext" aria-label="Następne zdjęcie">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+    </button>
     <img class="lightbox__img" id="lightboxImg" src="" alt="">
   </div>
 </div>
 
 <script src="js/main.js?v=2088a150"></script>
-<script src="js/lightbox.js?v=13a2233c"></script>
+<script src="js/lightbox.js?v=1898782c"></script>
 <script src="js/consent.js?v=d1dc2323"></script>
 <script src="js/tracking.js?v=b3a6cda3"></script>
 </body>
