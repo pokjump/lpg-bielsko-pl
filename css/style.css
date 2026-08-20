@@ -1035,7 +1035,11 @@ img, video { -webkit-user-drag: none; user-select: none; -webkit-user-select: no
 .gallery-card__photos img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.5s ease; }
 .gallery-card__photos button:hover img { transform: scale(1.06); }
 .gallery-card__body { padding: 1.25rem 1.5rem 1.5rem; position: relative; }
-.gallery-card__brand { position: absolute; top: 1.25rem; right: 1.5rem; max-width: 4.5rem; max-height: 1.75rem; width: auto; height: auto; object-fit: contain; }
+.gallery-card__brand {
+  position: absolute; top: 1.25rem; right: 1.5rem;
+  max-width: 4.5rem; max-height: 1.75rem; width: auto; height: auto; object-fit: contain;
+  filter: drop-shadow(0 0 0.2rem rgba(255,255,255,0.22)) drop-shadow(0 0 0.45rem rgba(255,255,255,0.14));
+}
 .gallery-card__title { font-family: var(--font-head); font-weight: 700; font-size: 1.0625rem; color: var(--fg); margin-bottom: 0.5rem; padding-right: 5rem; }
 .gallery-card__text { color: var(--fg-muted); font-size: 0.875rem; font-weight: 300; line-height: 1.6; }
 
