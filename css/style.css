@@ -44,6 +44,7 @@ body {
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }
+html.has-mobile-menu-open, body.has-mobile-menu-open { overflow: hidden; height: 100%; }
 h1, h2, h3, h4, p, ul, figure { margin: 0; padding: 0; }
 ul { list-style: none; }
 a { color: var(--accent); text-decoration: none; }
@@ -224,6 +225,7 @@ img, video { -webkit-user-drag: none; user-select: none; -webkit-user-select: no
 
 .site-header__mobile {
   position: absolute; inset-inline: 0; top: 0; z-index: 40;
+  max-height: 100vh; max-height: 100dvh; overflow-y: auto; -webkit-overflow-scrolling: touch;
   background-color: rgba(10, 11, 13, 0.97);
   backdrop-filter: blur(28px); -webkit-backdrop-filter: blur(28px);
   box-shadow: 0 20px 40px -12px rgba(0,0,0,0.6);

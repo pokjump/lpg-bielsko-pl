@@ -48,6 +48,8 @@ function initHeader() {
     burgerBtn.classList.toggle("is-open", open);
     burgerBtn.setAttribute("aria-expanded", String(open));
     mobileMenu.classList.toggle("is-open", open);
+    document.documentElement.classList.toggle("has-mobile-menu-open", open);
+    document.body.classList.toggle("has-mobile-menu-open", open);
   }
 
   burgerBtn.addEventListener("click", function () {
