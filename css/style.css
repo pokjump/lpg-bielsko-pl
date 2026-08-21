@@ -1039,8 +1039,8 @@ img, video { -webkit-user-drag: none; user-select: none; -webkit-user-select: no
 .gallery-card__body { padding: 1.25rem 1.5rem 1.5rem; position: relative; }
 .gallery-card__brand {
   position: absolute; top: 1.25rem; right: 1.5rem;
-  max-width: 4.5rem; max-height: 1.75rem; width: auto; height: auto;
-  padding: 0.3rem 0.5rem; border: 1px solid var(--accent); border-radius: var(--r-sm);
+  width: 2.75rem; height: 2.75rem; object-fit: contain;
+  padding: 0.375rem; border: 1px solid var(--accent); border-radius: var(--r-sm);
   background-color: var(--bg-raised);
 }
 .gallery-card__title { font-family: var(--font-head); font-weight: 700; font-size: 1.0625rem; color: var(--fg); margin-bottom: 0.5rem; padding-right: 5rem; }
