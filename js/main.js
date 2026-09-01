@@ -2,7 +2,6 @@ function initApp() {
   [
     initHeader,
     initServicesDropdown,
-    initHeroHighlight,
     initRevealAnimations,
     initCountUp,
     initAboutVideos,
@@ -92,20 +91,6 @@ function initServicesDropdown() {
 
   dropdown.addEventListener("mouseleave", function () {
     dropdown.classList.remove("is-closed");
-  });
-}
-
-function initHeroHighlight() {
-  var bgWrap = document.querySelector(".hero__bg-wrap");
-  if (!bgWrap) return;
-
-  document.querySelectorAll(".site-header a, .hero a").forEach(function (link) {
-    link.addEventListener("mouseenter", function () {
-      bgWrap.classList.add("is-highlighted");
-    });
-    link.addEventListener("mouseleave", function () {
-      bgWrap.classList.remove("is-highlighted");
-    });
   });
 }
 
