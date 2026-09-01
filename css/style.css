@@ -549,7 +549,7 @@ img, video { -webkit-user-drag: none; user-select: none; -webkit-user-select: no
 .lr-badge__panel { display: flex; flex-direction: column; gap: 2.5rem; align-items: center; text-align: center; }
 @media (min-width: 768px) { .lr-badge__panel { flex-direction: row; text-align: left; gap: 3.5rem; } }
 
-.lr-badge__logo { height: 7rem; width: auto; max-width: 260px; object-fit: contain; filter: brightness(0) invert(1); opacity: 0.9; flex-shrink: 0; }
+.lr-badge__logo { height: 10rem; width: auto; max-width: 340px; object-fit: contain; filter: brightness(0) invert(1); opacity: 0.9; flex-shrink: 0; }
 
 .lr-badge__title { font-family: var(--font-head); font-weight: 700; text-transform: uppercase; letter-spacing: -0.01em; color: var(--fg); font-size: 1.5rem; margin-bottom: 1.25rem; }
 @media (min-width: 768px) { .lr-badge__title { font-size: 1.875rem; } }
