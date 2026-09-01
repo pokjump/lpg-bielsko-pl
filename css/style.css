@@ -761,9 +761,17 @@ img, video { -webkit-user-drag: none; user-select: none; -webkit-user-select: no
 .policy-content ul { list-style: disc; padding-left: 1.5rem; display: flex; flex-direction: column; gap: 0.5rem; margin-bottom: 1rem; }
 .policy-content ul span { color: var(--fg); font-weight: 500; }
 .policy-content p + p { margin-top: 1rem; }
+.policy-content p + ul { margin-top: 1rem; }
+.policy-content > div { scroll-margin-top: 6rem; }
 
 .policy-content-btn { color: var(--accent); text-decoration: underline; text-underline-offset: 2px; }
 .policy-content-btn:hover { color: var(--accent-strong); }
+
+.policy-toc { border: 1px solid var(--border-strong); border-radius: var(--r-md); background-color: var(--surface); padding: 1.5rem; }
+.policy-toc__label { font-family: var(--font-head); font-weight: 700; color: var(--fg); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 1rem; }
+.policy-content .policy-toc__list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.625rem; }
+.policy-toc__list a { color: var(--fg-muted); font-weight: 400; }
+.policy-toc__list a:hover { color: var(--accent); text-decoration: underline; }
 
 /* ---------- cookie consent banner ---------- */
 
