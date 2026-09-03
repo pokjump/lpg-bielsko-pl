@@ -12,23 +12,37 @@
   });
   if (!sections.length) return;
 
+  var OFFSET = 120;
+
   function setActive(id) {
     sections.forEach(function (s) {
       s.link.classList.toggle("is-active", s.id === id);
     });
   }
 
-  if ("IntersectionObserver" in window) {
-    var observer = new IntersectionObserver(
-      function (entries) {
-        entries.forEach(function (entry) {
-          if (entry.isIntersecting) setActive(entry.target.id);
-        });
-      },
-      { rootMargin: "-100px 0px -70% 0px", threshold: 0 }
-    );
-    sections.forEach(function (s) { observer.observe(s.section); });
+  function updateActive() {
+    var currentId = sections[0].id;
+    for (var i = 0; i < sections.length; i++) {
+      if (sections[i].section.getBoundingClientRect().top - OFFSET <= 0) {
+        currentId = sections[i].id;
+      } else {
+        break;
+      }
+    }
+    setActive(currentId);
   }
 
-  setActive(sections[0].id);
+  var ticking = false;
+  function onScroll() {
+    if (ticking) return;
+    ticking = true;
+    requestAnimationFrame(function () {
+      updateActive();
+      ticking = false;
+    });
+  }
+
+  window.addEventListener("scroll", onScroll, { passive: true });
+  window.addEventListener("resize", onScroll);
+  updateActive();
 })();
