@@ -25,7 +25,12 @@ jobs:
           exclude: |
             **/.git*
             **/.git*/**
+            **/node_modules/**
             .github/**
+            .claude/**
             _seo/**
             tools/**
             unused/**
+            AGENTS.md
+            CLAUDE.md
+            CLAUDE.local.md
