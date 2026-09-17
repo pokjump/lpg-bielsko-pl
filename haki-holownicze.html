@@ -32,7 +32,7 @@
 <link rel="manifest" href="icons/site.webmanifest">
 
 <link rel="stylesheet" href="css/fonts.css?v=514b7df2">
-<link rel="stylesheet" href="css/style.css?v=2e8a12cc">
+<link rel="stylesheet" href="css/style.css?v=a6825c6b">
 
 <script type="application/ld+json">
 {
@@ -131,10 +131,25 @@
       <span class="breadcrumbs__sep">/</span>
       <span class="breadcrumbs__current">Haki Holownicze</span>
     </nav>
-    <h1 class="page-hero__title">Montaż Haków Holowniczych Bielsko-Biała</h1>
-    <p class="page-hero__lead">
-      Profesjonalny montaż haków holowniczych w Bielsku-Białej - stałych i wypinanych, z pełną homologacją E20 i kompletem dokumentów potrzebnych do wpisu w dowodzie rejestracyjnym. Dobieramy hak indywidualnie do modelu samochodu.
-    </p>
+    <div class="page-hero__grid">
+      <div class="page-hero__text">
+        <h1 class="page-hero__title">Montaż Haków Holowniczych Bielsko-Biała</h1>
+        <p class="page-hero__lead">
+          Profesjonalny montaż haków holowniczych w Bielsku-Białej - stałych i wypinanych, z pełną homologacją E20 i kompletem dokumentów potrzebnych do wpisu w dowodzie rejestracyjnym. Dobieramy hak indywidualnie do modelu samochodu.
+        </p>
+      </div>
+
+      <figure class="page-hero__cert">
+        <span class="page-hero__cert-eyebrow">Certyfikat</span>
+        <button type="button" class="page-hero__cert-btn" data-lightbox="images/certificates/cert-oris-full.jpg" data-lightbox-alt="Certyfikat partnera marki haków holowniczych ORIS dla F.H.U. Auto Diag s.c. w Bielsku-Białej" aria-label="Powiększ certyfikat partnera marki ORIS">
+          <img src="images/certificates/cert-oris.webp" alt="Certyfikat partnera marki haków holowniczych ORIS dla F.H.U. Auto Diag s.c. w Bielsku-Białej" width="1000" height="702">
+          <span class="page-hero__cert-zoom" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607zM10.5 7.5v6m3-3h-6"/></svg>
+          </span>
+        </button>
+        <figcaption class="page-hero__cert-caption">Partner marki ORIS - kliknij, aby powiększyć</figcaption>
+      </figure>
+    </div>
   </div>
 </section>
 
@@ -142,6 +157,17 @@
   <div class="container">
     <div class="page-content__grid">
       <article class="prose">
+        <h2>Certyfikowany partner marki ORIS</h2>
+        <p>
+          Jesteśmy <strong>certyfikowanym partnerem marki ORIS</strong> - niemieckiego producenta haków holowniczych (ACPS Automotive z Mönchengladbach), obecnego na rynku nieprzerwanie od 1955 roku. Certyfikat partnerski wystawiony w lutym 2026 roku dla F.H.U. Auto Diag s.c. z ul. Harfowej 8 w Bielsku-Białej potwierdza, że jesteśmy specjalistą w zakresie haków holowniczych tej marki - jego skan można obejrzeć w powiększeniu na górze tej strony.
+        </p>
+        <p>
+          Dla klienta oznacza to przede wszystkim dostęp do pełnej oferty producenta: haków stałych, wypinanych ręcznie oraz odpinanych automatycznie, a także dedykowanych wiązek elektrycznych dopasowanych do konkretnego modelu samochodu. Haki ORIS mają homologację E i tabliczkę znamionową z dopuszczalnymi obciążeniami, więc od razu spełniają wymogi potrzebne do wpisu w dowodzie rejestracyjnym.
+        </p>
+        <p>
+          Status partnera daje nam też bieżący dostęp do dokumentacji montażowej producenta i informacji o zastosowaniach poszczególnych haków - dzięki temu dobieramy model pasujący do konkretnego rocznika i wersji nadwozia, a montaż wykonujemy zgodnie z instrukcją producenta, z zachowaniem gwarancji na hak.
+        </p>
+
         <h2>Homologacja i rejestracja haka</h2>
         <p>
           Hak holowniczy <strong>musi mieć homologację</strong> potwierdzoną oznaczeniem E (w Polsce E20) oraz tabliczkę znamionową z dopuszczalnymi obciążeniami - bez tego nie da się go zarejestrować. Sam wpis do dowodu rejestracyjnego jest obowiązkowy: jazda z niezgłoszonym hakiem jest niezgodna z przepisami i może być problemem przy likwidacji szkody czy sprzedaży samochodu.
@@ -357,7 +383,23 @@
   </div>
 </div>
 
+<div class="lightbox" id="lightbox" hidden>
+  <div class="lightbox__figure">
+    <button type="button" class="lightbox__close" id="lightboxClose" aria-label="Zamknij podgląd zdjęcia">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+    </button>
+    <button type="button" class="lightbox__nav lightbox__nav--prev" id="lightboxPrev" aria-label="Poprzednie zdjęcie">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/></svg>
+    </button>
+    <button type="button" class="lightbox__nav lightbox__nav--next" id="lightboxNext" aria-label="Następne zdjęcie">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+    </button>
+    <img class="lightbox__img" id="lightboxImg" src="" alt="">
+  </div>
+</div>
+
 <script src="js/main.js?v=4f21dc7a"></script>
+<script src="js/lightbox.js?v=1898782c"></script>
 <script src="js/consent.js?v=d1dc2323"></script>
 <script src="js/tracking.js?v=b3a6cda3"></script>
 <!-- Cloudflare Web Analytics --><script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "d187a69e90bf447f9bc49c163aadb749"}'></script><!-- End Cloudflare Web Analytics -->
