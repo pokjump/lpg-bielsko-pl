@@ -1,2 +1,7 @@
 CLAUDE.local.md
 .claude/settings.local.json
+_seo/
+tools/
+unused/
+AGENTS.md
+CLAUDE.md
