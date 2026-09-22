@@ -7,123 +7,63 @@ Strona wizytówka warsztatu samochodowego **Auto Diag** w Bielsku-Białej.
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=000000)
 ![Apache](https://img.shields.io/badge/Apache-D22128?style=flat-square&logo=apache&logoColor=white)
 ![GitHub Actions](https://img.shields.io/badge/GitHub%20Actions-2088FF?style=flat-square&logo=githubactions&logoColor=white)
-![Node.js](https://img.shields.io/badge/Node.js-5FA04E?style=flat-square&logo=nodedotjs&logoColor=white)
 
 ![bez frameworka](https://img.shields.io/badge/bez%20frameworka-0a0b0d?style=flat-square)
 ![bez bundlera](https://img.shields.io/badge/bez%20bundlera-0a0b0d?style=flat-square)
 ![zero zależności npm](https://img.shields.io/badge/zero%20zale%C5%BCno%C5%9Bci%20npm-0a0b0d?style=flat-square)
-![deploy przez FTPS](https://img.shields.io/badge/deploy-FTPS-35d6a6?style=flat-square)
 ![strona statyczna](https://img.shields.io/badge/strona-statyczna-35d6a6?style=flat-square)
+![licencja prywatna](https://img.shields.io/badge/licencja-prywatna-35d6a6?style=flat-square)
+
+**https://lpg.bielsko.pl/**
 
 ## O projekcie
 
 Warsztat zajmuje się montażem instalacji LPG, montażem haków holowniczych, diagnostyką
-komputerową oraz elektroniką samochodową, a strona ma te usługi opisać i doprowadzić
-klienta do kontaktu. Poza opisem usług udostępnione są: kalkulator opłacalności instalacji
-gazowej, galeria realizacji, opinie z Google, sekcja FAQ oraz dane kontaktowe z mapą.
+komputerową oraz elektroniką samochodową. Strona ma te usługi opisać i doprowadzić klienta
+do kontaktu, dlatego numer telefonu, adres i godziny otwarcia są dostępne z każdego miejsca
+serwisu.
 
-Serwis jest napisany w czystym HTML, CSS i JavaScript. Framework, bundler ani zależności
-npm nie są używane, a każda podstrona jest osobnym plikiem `.html`. Całość jest serwowana
-z hostingu Apache pod adresem https://lpg.bielsko.pl/ i wdrażana automatycznie przez FTP
-po pushu na `main`.
+Serwis jest napisany w czystym HTML, CSS i JavaScript, a każda podstrona jest osobnym
+plikiem. Framework, bundler ani zależności zewnętrzne nie są używane. Całość jest serwowana
+z hostingu Apache.
+
+Co jest udostępnione użytkownikowi:
+
+- opisy czterech głównych usług, każda na własnej podstronie,
+- kalkulator opłacalności instalacji gazowej, liczący oszczędność i czas zwrotu,
+- galeria realizacji z podglądem zdjęć w pełnym rozmiarze,
+- opinie klientów z Google,
+- sekcja FAQ z odpowiedziami na najczęstsze pytania,
+- dane kontaktowe wraz z mapą dojazdu.
 
 Przyjęte założenia:
 
-- **Lekkość**: brak builda i bibliotek zewnętrznych, fonty trzymane lokalnie, obrazy w `.webp`.
-- **Prywatność**: Google Analytics, Cloudflare Web Analytics oraz osadzenia (mapa, YouTube)
-  są uruchamiane dopiero po zgodzie użytkownika.
-- **Bezpieczeństwo**: nagłówki i wąska polityka CSP są ustawione w `.htaccess`, przez co
-  inline'owy JavaScript jest w projekcie zabroniony.
-- **SEO**: komplet meta, dane strukturalne JSON-LD, `sitemap.xml`, `robots.txt` oraz
+- **Lekkość**: brak builda i bibliotek zewnętrznych, fonty trzymane lokalnie, zdjęcia
+  serwowane w `.webp`.
+- **Prywatność**: analityka oraz osadzenia (mapa, YouTube) są uruchamiane dopiero po
+  zgodzie wyrażonej w bannerze cookie.
+- **Bezpieczeństwo**: nagłówki i wąska polityka CSP są ustawione po stronie serwera,
+  przez co inline'owy JavaScript w ogóle nie występuje.
+- **SEO**: komplet znaczników meta, dane strukturalne JSON-LD, mapa witryny oraz
   przekierowania 301 ze starej domeny i poprzedniej struktury adresów.
 
-## Stack
+## Podstrony
 
-| Warstwa | Rozwiązanie |
+| Adres | Zawartość |
 | --- | --- |
-| HTML | HTML5 pisany ręcznie, jeden plik na jedną podstronę |
-| CSS | `css/style.css` + `css/fonts.css`, zmienne w `:root`, bez preprocesora |
-| JS | styl ES5 (`var`, `function`, IIFE), bez modułów i bez frameworka |
-| Fonty | self-hosted `.woff2`: Inter, Space Grotesk, JetBrains Mono |
-| Serwer | Apache, konfiguracja w `.htaccess` |
-| Analityka | Google Analytics (gtag) oraz Cloudflare Web Analytics, obie za zgodą |
-| Narzędzia | Node.js wyłącznie do `tools/cache-bust.js` (same moduły wbudowane) |
-
-## Uruchomienie lokalne
-
-Instalacja nie jest wymagana, nie ma builda ani testów. Podgląd jest uruchamiany dowolnym
-serwerem statycznym:
-
-```
-npx serve
-```
-
-Trzeba pamiętać, że `.htaccess` nie jest obsługiwany lokalnie, więc ładne adresy
-(`/haki-holownicze` zamiast `/haki-holownicze.html`) i przekierowania 301 są widoczne
-dopiero na serwerze produkcyjnym.
-
-## Cache busting
-
-Jedyna komenda w projekcie:
-
-```
-node tools/cache-bust.js
-```
-
-Odwołania do `css/*.css` i `js/*.js` we wszystkich plikach `*.html` z katalogu głównego są
-stemplowane hashem treści (`?v=xxxxxxxx`). Skrypt jest idempotentny, więc przy braku zmian
-nic nie jest modyfikowane. Polecenie powinno być uruchamiane po każdej zmianie w `css/`
-lub `js/`, jeszcze przed commitem. Hashe nie są edytowane ręcznie.
-
-## Struktura
-
-```
-*.html            wszystkie podstrony (index, strony usług, faq, galeria, polityka, 404)
-css/              style.css, fonts.css oraz fonts/ z plikami .woff2
-js/               skrypty ładowane per strona
-images/           gallery/ (pary nazwa.webp + nazwa-full.jpg), logos/, certificates/
-videos/           materiały wideo z warsztatu (mp4)
-icons/            favicony i site.webmanifest
-tools/            cache-bust.js (nie trafia na FTP)
-_seo/             raporty audytów SEO (nie trafia na FTP)
-unused/           materiały odłożone na bok (nie trafia na FTP)
-.github/          workflow deployu
-```
-
-### Podstrony
-
-| Plik | Adres | Zawartość |
-| --- | --- | --- |
-| `index.html` | `/` | strona główna, usługi, opinie, kontakt |
-| `instalacje-lpg.html` | `/instalacje-lpg` | montaż instalacji gazowych, kalkulator oszczędności |
-| `haki-holownicze.html` | `/haki-holownicze` | montaż haków, certyfikat ORIS |
-| `diagnostyka-komputerowa.html` | `/diagnostyka-komputerowa` | diagnostyka i programowanie |
-| `elektronika-alarmy.html` | `/elektronika-alarmy` | alarmy, immobilisery, czujniki |
-| `galeria.html` | `/galeria` | zdjęcia realizacji w lightboksie |
-| `faq.html` | `/faq` | najczęstsze pytania |
-| `polityka-prywatnosci.html` | `/polityka-prywatnosci` | polityka prywatności i cookies |
-| `404.html` | fallback | strona błędu |
-
-### Skrypty
-
-| Plik | Rola | Gdzie jest ładowany |
-| --- | --- | --- |
-| `main.js` | nagłówek, menu, animacje, liczniki, opinie, osadzenia | wszędzie |
-| `consent.js` | banner cookie i obsługa zgód | wszędzie |
-| `ga-init.js` | inicjalizacja gtag z domyślnie odrzuconymi zgodami | wszędzie |
-| `tracking.js` | zdarzenia analityczne | wszędzie |
-| `reviews-data.js` | dane opinii Google | `index.html` |
-| `lpg-calc.js` | kalkulator opłacalności LPG | `instalacje-lpg.html` |
-| `lightbox.js` | podgląd zdjęć | `galeria.html`, `haki-holownicze.html` |
-| `policy-toc.js` | spis treści polityki | `polityka-prywatnosci.html` |
-
-Funkcje `initX()` z `main.js` są wywoływane z tablicy w `initApp()`. Nowy moduł powinien
-zostać dopisany do tej listy.
+| `/` | strona główna: hero, usługi, o warsztacie, opinie, kontakt |
+| `/instalacje-lpg` | montaż instalacji gazowych, autoryzacje, kalkulator oszczędności |
+| `/haki-holownicze` | montaż haków, certyfikat partnera ORIS |
+| `/diagnostyka-komputerowa` | diagnostyka, kasowanie błędów, programowanie |
+| `/elektronika-alarmy` | alarmy, immobilisery, czujniki, instalacje elektryczne |
+| `/galeria` | zdjęcia realizacji w lightboksie |
+| `/faq` | najczęstsze pytania i odpowiedzi |
+| `/polityka-prywatnosci` | polityka prywatności i cookies ze spisem treści |
 
 ## Paleta barw
 
-Kolory są zdefiniowane wyłącznie jako zmienne CSS w `:root` (`css/style.css`). Wartości nie
-są wpisywane na sztywno w regułach. Motyw jest ciemny (`color-scheme: dark`).
+Motyw jest ciemny. Kolory są zdefiniowane jako zmienne CSS w `:root` i tylko stamtąd
+pobierane, dzięki czemu cała strona jest przestawiana w jednym miejscu.
 
 ### Tła i powierzchnie
 
@@ -146,6 +86,10 @@ są wpisywane na sztywno w regułach. Motyw jest ciemny (`color-scheme: dark`).
 
 ### Akcent
 
+Akcentem jest zielona mięta. Kolor jest zarezerwowany dla elementów, które mają prowadzić
+wzrok: linków, ikon, przycisków akcji, liczników i wyróżnień w nagłówkach. Reszta strony
+jest utrzymana w szarościach, więc każde użycie akcentu od razu rzuca się w oczy.
+
 | Kolor | Zmienna | Wartość | Zastosowanie |
 | :---: | --- | --- | --- |
 | ![#35d6a6](https://img.shields.io/badge/%E2%A0%80%E2%A0%80%E2%A0%80%E2%A0%80%E2%A0%80%E2%A0%80-35d6a6?style=flat-square) | `--accent` | `#35d6a6` | kolor marki, linki, ikony, CTA |
@@ -162,71 +106,35 @@ są wpisywane na sztywno w regułach. Motyw jest ciemny (`color-scheme: dark`).
 | ![#2c2d2f](https://img.shields.io/badge/%E2%A0%80%E2%A0%80%E2%A0%80%E2%A0%80%E2%A0%80%E2%A0%80-2c2d2f?style=flat-square) | `--border-hairline` | `rgba(255, 255, 255, 0.14)` | cienka linia rozdzielająca |
 | ![#3b3c3d](https://img.shields.io/badge/%E2%A0%80%E2%A0%80%E2%A0%80%E2%A0%80%E2%A0%80%E2%A0%80-3b3c3d?style=flat-square) | `--border-strong` | `rgba(255, 255, 255, 0.20)` | obramowanie wyróżnione |
 
-Kolory półprzezroczyste są pokazane jako wynik nałożenia na `--bg`, bo sama próbka nie
-odda kanału alfa. W kodzie używane są wartości `rgba` z kolumny obok.
+Kolory półprzezroczyste są pokazane jako wynik nałożenia na `--bg`, bo sama próbka nie odda
+kanału alfa. W kodzie używane są wartości `rgba` z kolumny obok.
 
-### Typografia i geometria
+## Typografia
 
-| Zmienna | Wartość |
-| --- | --- |
-| `--font-sans` | `"Inter"` + systemowe |
-| `--font-head` | `"Space Grotesk"` + systemowe |
-| `--font-mono` | `"JetBrains Mono"` + systemowe |
-| `--r-sm` / `--r-md` | `2px` / `4px` |
-| `--container-max` | `80rem` |
-| `--container-max-narrow` | `62rem` |
+Użyte są trzy kroje, wszystkie osadzone lokalnie w formacie `.woff2`, bez odpytywania
+zewnętrznych serwerów.
 
-## Konwencje
+| Krój | Zmienna | Rola | Grubości |
+| --- | --- | --- | --- |
+| Space Grotesk | `--font-head` | nagłówki, tytuły sekcji, liczby w statystykach | 500, 600, 700 |
+| Inter | `--font-sans` | tekst ciągły, leady, elementy interfejsu | 300 do 800 |
+| JetBrains Mono | `--font-mono` | etykiety, nadtytuły, podpisy techniczne | 400, 500, 600 |
 
-- Treść, komentarze w kodzie i komunikaty commitów są pisane po polsku.
-- Wcięcia mają 2 spacje w HTML, CSS i JS. Sekcje najwyższego poziomu w HTML nie są wcinane.
-- Nazwy klas CSS są w stylu BEM (`hero__stat-value`, `btn--primary`), a stany oznaczane
-  przez `is-` oraz `has-` (`is-scrolled`, `has-mobile-menu-open`).
-- `style.css` jest podzielony komentarzami `/* ---------- nazwa sekcji ---------- */`.
-  Nowa reguła powinna być dopisana do właściwej sekcji, nie na koniec pliku.
-- Inline'owy JavaScript jest zabroniony: żadnych `onclick=` ani `<script>` z kodem w HTML.
-  Blokuje go CSP z `.htaccess` (`script-src 'self'` plus GTM i Cloudflare). Wyjątkiem są
-  bloki `application/ld+json` z danymi strukturalnymi, które nie są wykonywane.
-- Nagłówek (`nav.site-header`) i stopka są skopiowane w każdym pliku HTML. Zmiana w menu
-  lub stopce musi zostać powtórzona we wszystkich `*.html`. W `index.html` używane są linki
-  kotwicowe (`#uslugi`), a na podstronach i w `404.html` adresy bezwzględne.
-- Każda podstrona ma komplet meta: `title`, `description`, `canonical`, Open Graph,
-  Twitter Card oraz JSON-LD. Przy dodawaniu strony wzorzec jest kopiowany z istniejącej.
-- Obrazy są wyświetlane jako `.webp`, a wersje `-full.jpg` służą jako podgląd w lightboksie.
-- Linki wewnętrzne są pisane bez `.html`. Adresy z rozszerzeniem są przepisywane
-  i przekierowywane przez `.htaccess`.
+Zasady, które trzymają całość w ryzach:
 
-## Deploy
+- Nagłówki są pisane wersalikami, ze ściśniętym odstępem liter (`letter-spacing: -0.02em`),
+  przez co bloki tekstu czytają się jak tabliczka warsztatowa.
+- Nadtytuły sekcji są składane krojem mono, wersalikami, z rozstrzelonym odstępem
+  (`0.12em`) i poprzedzone krótką kreską w kolorze akcentu.
+- Tekst ciągły jest utrzymany w lekkich grubościach na wyszarzonym kolorze, a pogrubienia
+  są zarezerwowane dla fragmentów, które mają zostać zapamiętane.
+- Interlinia tekstu wynosi 1.5, a nagłówków od 1.0 do 1.1.
 
-Push na gałąź `main` uruchamia GitHub Actions (`.github/workflows/deploy.yml`), gdzie
-`SamKirkland/FTP-Deploy-Action` wysyła pliki przez FTPS do `/public_html/`. Build nie jest
-wykonywany: na serwer trafia zawartość repozytorium jeden do jednego, poza wykluczeniami
-z pola `exclude`. Dane logowania są trzymane w sekretach repozytorium (`FTP_SERVER`,
-`FTP_USERNAME`, `FTP_PASSWORD`).
+Geometria jest celowo surowa: promienie zaokrągleń to `2px` i `4px`, a treść jest
+ograniczona do `80rem` szerokości, w tekstach ciągłych do `62rem`.
 
-Kolejność przy zmianie plików produkcyjnych:
+## Licencja
 
-```
-node tools/cache-bust.js
-git commit
-git push
-```
-
-## Pułapki
-
-- Wszystko, co zostanie dodane do katalogu głównego repozytorium, wyląduje na serwerze WWW.
-  Pliki robocze powinny być trzymane w `_seo/`, `tools/` lub `unused/`, ewentualnie dopisane
-  do `exclude` w `deploy.yml`.
-- Lista `exclude` w `deploy.yml` nadpisuje domyślną listę akcji. Przy dopisywaniu wpisów
-  muszą zostać zachowane `**/.git*`, `**/.git*/**` i `**/node_modules/**`.
-- CSP w `.htaccess` jest wąska. Nowy zewnętrzny skrypt, font, obraz czy iframe wymaga
-  dopisania hosta do odpowiedniej dyrektywy, inaczej zostanie zablokowany przez przeglądarkę.
-- Google Analytics oraz osadzone treści (mapa, YouTube) są uruchamiane dopiero po zgodzie
-  z bannera cookie (`js/consent.js`, klucze `cookie-consent-analytics`
-  i `cookie-consent-embeds`). Śledzenie nie może być podpinane z pominięciem tego mechanizmu.
-- Przekierowania 301 w `.htaccess` obsługują stare adresy z domeny `autodiag.bielsko.pl`
-  oraz poprzedniej struktury serwisu. Nie powinny być kasowane, bo przenoszą moc linków.
-- W `sitemap.xml` data `lastmod` jest podnoszona tylko dla adresów, których treść faktycznie
-  się zmieniła. Hurtowa aktualizacja dat obniża wiarygodność tego sygnału w Google.
-- Plik `google120d8cfd6a20b59a.html` służy do weryfikacji Google Search Console i nie może
-  zostać ruszony.
+Projekt jest objęty [licencją prywatną](LICENSE). Wszelkie prawa do kodu i projektu
+graficznego są zastrzeżone, a repozytorium jest udostępnione wyłącznie do wglądu.
+Prawa do zdjęć, materiałów wideo, logo i nazwy Auto Diag należą do Auto Diag.
