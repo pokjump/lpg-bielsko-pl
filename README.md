@@ -1,9 +1,41 @@
 # lpg.bielsko.pl
 
-Strona wizytówka warsztatu **Auto Diag** z Bielska-Białej: instalacje LPG, haki holownicze,
-diagnostyka komputerowa oraz elektronika samochodowa. Serwis jest napisany w czystym HTML,
-CSS i JavaScript, bez frameworka, bez bundlera i bez zależności npm. Całość jest serwowana
-z hostingu Apache pod adresem https://lpg.bielsko.pl/ i wdrażana automatycznie przez FTP.
+Strona wizytówka warsztatu samochodowego **Auto Diag** w Bielsku-Białej.
+
+![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=css3&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=000000)
+![Apache](https://img.shields.io/badge/Apache-D22128?style=flat-square&logo=apache&logoColor=white)
+![GitHub Actions](https://img.shields.io/badge/GitHub%20Actions-2088FF?style=flat-square&logo=githubactions&logoColor=white)
+![Node.js](https://img.shields.io/badge/Node.js-5FA04E?style=flat-square&logo=nodedotjs&logoColor=white)
+
+![bez frameworka](https://img.shields.io/badge/bez%20frameworka-0a0b0d?style=flat-square)
+![bez bundlera](https://img.shields.io/badge/bez%20bundlera-0a0b0d?style=flat-square)
+![zero zależności npm](https://img.shields.io/badge/zero%20zale%C5%BCno%C5%9Bci%20npm-0a0b0d?style=flat-square)
+![deploy przez FTPS](https://img.shields.io/badge/deploy-FTPS-35d6a6?style=flat-square)
+![strona statyczna](https://img.shields.io/badge/strona-statyczna-35d6a6?style=flat-square)
+
+## O projekcie
+
+Warsztat zajmuje się montażem instalacji LPG, montażem haków holowniczych, diagnostyką
+komputerową oraz elektroniką samochodową, a strona ma te usługi opisać i doprowadzić
+klienta do kontaktu. Poza opisem usług udostępnione są: kalkulator opłacalności instalacji
+gazowej, galeria realizacji, opinie z Google, sekcja FAQ oraz dane kontaktowe z mapą.
+
+Serwis jest napisany w czystym HTML, CSS i JavaScript. Framework, bundler ani zależności
+npm nie są używane, a każda podstrona jest osobnym plikiem `.html`. Całość jest serwowana
+z hostingu Apache pod adresem https://lpg.bielsko.pl/ i wdrażana automatycznie przez FTP
+po pushu na `main`.
+
+Przyjęte założenia:
+
+- **Lekkość**: brak builda i bibliotek zewnętrznych, fonty trzymane lokalnie, obrazy w `.webp`.
+- **Prywatność**: Google Analytics, Cloudflare Web Analytics oraz osadzenia (mapa, YouTube)
+  są uruchamiane dopiero po zgodzie użytkownika.
+- **Bezpieczeństwo**: nagłówki i wąska polityka CSP są ustawione w `.htaccess`, przez co
+  inline'owy JavaScript jest w projekcie zabroniony.
+- **SEO**: komplet meta, dane strukturalne JSON-LD, `sitemap.xml`, `robots.txt` oraz
+  przekierowania 301 ze starej domeny i poprzedniej struktury adresów.
 
 ## Stack
 
@@ -95,40 +127,43 @@ są wpisywane na sztywno w regułach. Motyw jest ciemny (`color-scheme: dark`).
 
 ### Tła i powierzchnie
 
-| Zmienna | Wartość | Zastosowanie |
-| --- | --- | --- |
-| `--bg` | `#0a0b0d` | tło dokumentu |
-| `--bg-raised` | `#0e1013` | sekcje wyniesione ponad tło |
-| `--surface` | `#141619` | karty i panele |
-| `--surface-high` | `#1b1e22` | element aktywny lub najechany |
-| `--surface-highest` | `#24272c` | najwyższa warstwa, np. pola formularzy |
-| `--surface-lowest` | `#000000` | czerń, m.in. tło lightboksa |
+| Kolor | Zmienna | Wartość | Zastosowanie |
+| :---: | --- | --- | --- |
+| ![#0a0b0d](https://img.shields.io/badge/%E2%A0%80%E2%A0%80%E2%A0%80%E2%A0%80%E2%A0%80%E2%A0%80-0a0b0d?style=flat-square) | `--bg` | `#0a0b0d` | tło dokumentu |
+| ![#0e1013](https://img.shields.io/badge/%E2%A0%80%E2%A0%80%E2%A0%80%E2%A0%80%E2%A0%80%E2%A0%80-0e1013?style=flat-square) | `--bg-raised` | `#0e1013` | sekcje wyniesione ponad tło |
+| ![#141619](https://img.shields.io/badge/%E2%A0%80%E2%A0%80%E2%A0%80%E2%A0%80%E2%A0%80%E2%A0%80-141619?style=flat-square) | `--surface` | `#141619` | karty i panele |
+| ![#1b1e22](https://img.shields.io/badge/%E2%A0%80%E2%A0%80%E2%A0%80%E2%A0%80%E2%A0%80%E2%A0%80-1b1e22?style=flat-square) | `--surface-high` | `#1b1e22` | element aktywny lub najechany |
+| ![#24272c](https://img.shields.io/badge/%E2%A0%80%E2%A0%80%E2%A0%80%E2%A0%80%E2%A0%80%E2%A0%80-24272c?style=flat-square) | `--surface-highest` | `#24272c` | najwyższa warstwa, np. pola formularzy |
+| ![#000000](https://img.shields.io/badge/%E2%A0%80%E2%A0%80%E2%A0%80%E2%A0%80%E2%A0%80%E2%A0%80-000000?style=flat-square) | `--surface-lowest` | `#000000` | czerń, m.in. tło lightboksa |
 
 ### Treść
 
-| Zmienna | Wartość | Zastosowanie |
-| --- | --- | --- |
-| `--fg` | `#eceef0` | tekst podstawowy |
-| `--fg-muted` | `#9aa0a7` | tekst pomocniczy, leady |
-| `--fg-faint` | `#666b71` | tekst najmniej istotny, podpisy |
+| Kolor | Zmienna | Wartość | Zastosowanie |
+| :---: | --- | --- | --- |
+| ![#eceef0](https://img.shields.io/badge/%E2%A0%80%E2%A0%80%E2%A0%80%E2%A0%80%E2%A0%80%E2%A0%80-eceef0?style=flat-square) | `--fg` | `#eceef0` | tekst podstawowy |
+| ![#9aa0a7](https://img.shields.io/badge/%E2%A0%80%E2%A0%80%E2%A0%80%E2%A0%80%E2%A0%80%E2%A0%80-9aa0a7?style=flat-square) | `--fg-muted` | `#9aa0a7` | tekst pomocniczy, leady |
+| ![#666b71](https://img.shields.io/badge/%E2%A0%80%E2%A0%80%E2%A0%80%E2%A0%80%E2%A0%80%E2%A0%80-666b71?style=flat-square) | `--fg-faint` | `#666b71` | tekst najmniej istotny, podpisy |
 
 ### Akcent
 
-| Zmienna | Wartość | Zastosowanie |
-| --- | --- | --- |
-| `--accent` | `#35d6a6` | kolor marki, linki, ikony, CTA |
-| `--accent-strong` | `#4ff0bc` | stan hover akcentu |
-| `--accent-dim` | `rgba(53, 214, 166, 0.12)` | delikatne tło akcentowane |
-| `--accent-border` | `rgba(53, 214, 166, 0.32)` | obramowania akcentowane |
-| `--on-accent` | `#032019` | tekst na tle akcentu |
+| Kolor | Zmienna | Wartość | Zastosowanie |
+| :---: | --- | --- | --- |
+| ![#35d6a6](https://img.shields.io/badge/%E2%A0%80%E2%A0%80%E2%A0%80%E2%A0%80%E2%A0%80%E2%A0%80-35d6a6?style=flat-square) | `--accent` | `#35d6a6` | kolor marki, linki, ikony, CTA |
+| ![#4ff0bc](https://img.shields.io/badge/%E2%A0%80%E2%A0%80%E2%A0%80%E2%A0%80%E2%A0%80%E2%A0%80-4ff0bc?style=flat-square) | `--accent-strong` | `#4ff0bc` | stan hover akcentu |
+| ![#0f231f](https://img.shields.io/badge/%E2%A0%80%E2%A0%80%E2%A0%80%E2%A0%80%E2%A0%80%E2%A0%80-0f231f?style=flat-square) | `--accent-dim` | `rgba(53, 214, 166, 0.12)` | delikatne tło akcentowane |
+| ![#184c3e](https://img.shields.io/badge/%E2%A0%80%E2%A0%80%E2%A0%80%E2%A0%80%E2%A0%80%E2%A0%80-184c3e?style=flat-square) | `--accent-border` | `rgba(53, 214, 166, 0.32)` | obramowania akcentowane |
+| ![#032019](https://img.shields.io/badge/%E2%A0%80%E2%A0%80%E2%A0%80%E2%A0%80%E2%A0%80%E2%A0%80-032019?style=flat-square) | `--on-accent` | `#032019` | tekst na tle akcentu |
 
 ### Obramowania
 
-| Zmienna | Wartość | Zastosowanie |
-| --- | --- | --- |
-| `--border` | `rgba(255, 255, 255, 0.09)` | domyślna linia |
-| `--border-hairline` | `rgba(255, 255, 255, 0.14)` | cienka linia rozdzielająca |
-| `--border-strong` | `rgba(255, 255, 255, 0.20)` | obramowanie wyróżnione |
+| Kolor | Zmienna | Wartość | Zastosowanie |
+| :---: | --- | --- | --- |
+| ![#202123](https://img.shields.io/badge/%E2%A0%80%E2%A0%80%E2%A0%80%E2%A0%80%E2%A0%80%E2%A0%80-202123?style=flat-square) | `--border` | `rgba(255, 255, 255, 0.09)` | domyślna linia |
+| ![#2c2d2f](https://img.shields.io/badge/%E2%A0%80%E2%A0%80%E2%A0%80%E2%A0%80%E2%A0%80%E2%A0%80-2c2d2f?style=flat-square) | `--border-hairline` | `rgba(255, 255, 255, 0.14)` | cienka linia rozdzielająca |
+| ![#3b3c3d](https://img.shields.io/badge/%E2%A0%80%E2%A0%80%E2%A0%80%E2%A0%80%E2%A0%80%E2%A0%80-3b3c3d?style=flat-square) | `--border-strong` | `rgba(255, 255, 255, 0.20)` | obramowanie wyróżnione |
+
+Kolory półprzezroczyste są pokazane jako wynik nałożenia na `--bg`, bo sama próbka nie
+odda kanału alfa. W kodzie używane są wartości `rgba` z kolumny obok.
 
 ### Typografia i geometria
 
