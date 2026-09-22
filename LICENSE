@@ -1,52 +1,54 @@
-Licencja prywatna
-Wszelkie prawa zastrzeżone
+Proprietary License
+All rights reserved
 
 Copyright (c) 2026 pokjump
 
 
-1. Przedmiot ochrony
+1. Scope of protection
 
-Kod źródłowy, arkusze stylów, skrypty, układ, projekt graficzny oraz teksty serwisu
-lpg.bielsko.pl stanowią utwór w rozumieniu ustawy o prawie autorskim i prawach pokrewnych.
-Wyłącznym właścicielem majątkowych praw autorskich do nich jest pokjump.
+The source code, stylesheets, scripts, layout, graphic design and texts of the
+lpg.bielsko.pl website are protected by copyright. All economic copyright in them belongs
+exclusively to pokjump.
 
-Repozytorium jest publiczne wyłącznie w celu wglądu. Publikacja kodu nie oznacza udzielenia
-jakiejkolwiek licencji, zgody ani zrzeczenia się praw.
-
-
-2. Zakres zakazu
-
-Bez uprzedniej, pisemnej zgody właściciela praw zabronione jest w szczególności:
-
-- kopiowanie, pobieranie i przechowywanie kodu lub treści poza przeglądaniem repozytorium,
-- wykorzystywanie kodu, projektu lub jego fragmentów w innych projektach, komercyjnych
-  i niekomercyjnych,
-- modyfikowanie, tworzenie utworów zależnych i opracowań,
-- rozpowszechnianie, odsprzedaż, sublicencjonowanie oraz publiczne udostępnianie,
-- wykorzystywanie treści, kodu lub projektu do trenowania modeli uczenia maszynowego,
-  z wyjątkiem zakresu wprost dopuszczonego w pliku robots.txt serwisu.
+This repository is public for viewing purposes only. Publishing the code does not grant any
+license or permission, and does not constitute a waiver of any rights.
 
 
-3. Materiały Auto Diag
+2. Restrictions
 
-Zdjęcia, materiały wideo, logo, nazwa oraz znaki towarowe Auto Diag, a także treści opisujące
-działalność warsztatu, należą do Auto Diag i nie są objęte prawami, o których mowa w punkcie 1.
-Ich wykorzystanie w jakiejkolwiek formie wymaga odrębnej zgody Auto Diag.
+Without the prior written consent of the copyright holder, the following are prohibited in
+particular:
 
-
-4. Materiały osób trzecich
-
-Logotypy producentów instalacji gazowych i pozostałych marek pozostają własnością ich
-właścicieli i są prezentowane wyłącznie w celach informacyjnych.
-
-Kroje pisma Inter, Space Grotesk oraz JetBrains Mono są udostępniane na licencji
-SIL Open Font License 1.1 i podlegają jej warunkom, niezależnie od zapisów powyżej.
+- copying, downloading or storing the code or content beyond simply viewing the repository,
+- using the code, the design or any part of them in other projects, commercial or
+  non-commercial,
+- modifying the work and creating derivative works or adaptations,
+- distributing, reselling, sublicensing and making the work publicly available,
+- using the content, code or design to train machine learning models, except to the extent
+  expressly permitted in the robots.txt file of the website.
 
 
-5. Wyłączenie odpowiedzialności
+3. Auto Diag materials
 
-Materiał jest udostępniany w stanie, w jakim się znajduje, bez jakichkolwiek gwarancji.
-Właściciel praw nie ponosi odpowiedzialności za skutki jego wykorzystania.
+Photographs, video materials, the logo, the name and the trademarks of Auto Diag, as well as
+the content describing the workshop and its services, belong to Auto Diag and are not covered
+by the rights referred to in section 1. Any use of them requires separate consent from
+Auto Diag.
 
 
-Kontakt w sprawie zgód i licencji: https://lpg.bielsko.pl/
+4. Third party materials
+
+Logos of LPG system manufacturers and of other brands remain the property of their respective
+owners and are shown for informational purposes only.
+
+The Inter, Space Grotesk and JetBrains Mono typefaces are distributed under the SIL Open Font
+License 1.1 and remain subject to its terms, regardless of the provisions above.
+
+
+5. Disclaimer
+
+The material is provided as is, without warranty of any kind. The copyright holder is not
+liable for any consequences of its use.
+
+
+Licensing and permission enquiries: https://lpg.bielsko.pl/
