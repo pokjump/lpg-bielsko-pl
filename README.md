@@ -5,14 +5,6 @@ Strona wizytówka warsztatu samochodowego **Auto Diag** w Bielsku-Białej.
 ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white)
 ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=css3&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=000000)
-![Apache](https://img.shields.io/badge/Apache-D22128?style=flat-square&logo=apache&logoColor=white)
-![GitHub Actions](https://img.shields.io/badge/GitHub%20Actions-2088FF?style=flat-square&logo=githubactions&logoColor=white)
-
-![bez frameworka](https://img.shields.io/badge/bez%20frameworka-0a0b0d?style=flat-square)
-![bez bundlera](https://img.shields.io/badge/bez%20bundlera-0a0b0d?style=flat-square)
-![zero zależności npm](https://img.shields.io/badge/zero%20zale%C5%BCno%C5%9Bci%20npm-0a0b0d?style=flat-square)
-![strona statyczna](https://img.shields.io/badge/strona-statyczna-35d6a6?style=flat-square)
-![licencja prywatna](https://img.shields.io/badge/licencja-prywatna-35d6a6?style=flat-square)
 
 **https://lpg.bielsko.pl/**
 
