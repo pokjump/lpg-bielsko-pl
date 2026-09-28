@@ -4,6 +4,7 @@ function initApp() {
     initServicesDropdown,
     initRevealAnimations,
     initCountUp,
+    initHeroVideo,
     initAboutVideos,
     initReviews,
     loadAllEmbeds,
@@ -219,6 +220,12 @@ function initCountUp() {
   );
 
   groups.forEach(function (g) { observer.observe(g); });
+}
+
+function initHeroVideo() {
+  var video = document.querySelector(".hero__bg-video");
+  if (!video) return;
+  video.playbackRate = 2;
 }
 
 function initAboutVideos() {
