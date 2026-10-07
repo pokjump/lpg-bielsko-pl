@@ -417,6 +417,8 @@ img, video { -webkit-user-drag: none; user-select: none; -webkit-user-select: no
 
 .service-card__icon-corner { position: absolute; top: 0; right: 0; padding: 2rem; }
 .service-card__icon-corner svg { height: 2.75rem; width: 2.75rem; color: var(--accent); opacity: 0.25; transition: opacity 0.2s ease; }
+.service-card__icon-corner .service-card__lpg-badge { height: 2.25rem; width: auto; aspect-ratio: 64 / 28; opacity: 0.9; }
+.service-card__lpg-badge text { font-family: var(--font-mono); font-size: 14px; font-weight: 700; letter-spacing: 0.2em; }
 .service-card--lpg:hover .service-card__icon-corner svg { opacity: 0.9; }
 .service-card__body { position: relative; z-index: 10; }
 .service-card__eyebrow {
