@@ -1508,5 +1508,15 @@ const reviewsData = [
     "author": "Stanisław",
     "rating": 5,
     "text": ""
+  },
+  {
+    "author": "Maciej Me",
+    "rating": 5,
+    "text": ""
+  },
+  {
+    "author": "ARAS_PL",
+    "rating": 5,
+    "text": ""
   }
 ];
