@@ -568,6 +568,10 @@ img, video { -webkit-user-drag: none; user-select: none; -webkit-user-select: no
 
 .reviews__heading { text-align: center; position: relative; z-index: 10; }
 
+.reviews__hover-hint { display: none; align-items: center; justify-content: center; gap: 0.5rem; margin-top: 1.25rem; font-size: 0.75rem; color: var(--fg-muted); }
+.reviews__hover-hint svg { width: 16px; height: 16px; flex-shrink: 0; color: var(--accent); }
+@media (min-width: 768px) and (hover: hover) { .reviews__hover-hint { display: flex; } }
+
 .reviews__row { position: relative; margin-top: 4rem; }
 .reviews__row--second { margin-top: 1.5rem; }
 
