@@ -8,13 +8,3 @@ gtag('consent', 'default', {
   'analytics_storage': 'denied',
   'wait_for_update': 500
 });
-var storedConsent;
-try {
-  storedConsent = window.localStorage.getItem('cookie-consent-analytics');
-} catch (e) {
-  storedConsent = null;
-}
-if (storedConsent === 'granted') {
-  gtag('consent', 'update', { 'analytics_storage': 'granted' });
-}
-gtag('config', 'G-WXFQ5M9ZVY');

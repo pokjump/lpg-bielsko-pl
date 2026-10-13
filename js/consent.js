@@ -3,6 +3,8 @@
 
   var KEY_ANALYTICS = "cookie-consent-analytics";
   var KEY_EMBEDS = "cookie-consent-embeds";
+  var GA_ID = "G-WXFQ5M9ZVY";
+  var analyticsLoaded = false;
 
   function readConsent(key) {
     try {
@@ -18,9 +20,20 @@
     } catch (e) {}
   }
 
+  function loadAnalytics() {
+    if (analyticsLoaded) return;
+    analyticsLoaded = true;
+    window.gtag("config", GA_ID);
+    var script = document.createElement("script");
+    script.async = true;
+    script.src = "https://www.googletagmanager.com/gtag/js?id=" + GA_ID;
+    document.head.appendChild(script);
+  }
+
   function grantAnalyticsConsent() {
     if (typeof window.gtag !== "function") return;
     window.gtag("consent", "update", { analytics_storage: "granted" });
+    loadAnalytics();
   }
 
   function denyAnalyticsConsent() {
