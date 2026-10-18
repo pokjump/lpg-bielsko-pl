@@ -527,6 +527,127 @@ img, video { -webkit-user-drag: none; user-select: none; -webkit-user-select: no
 .about__text { margin-top: 1.5rem; font-size: 1.0625rem; color: var(--fg-muted); line-height: 1.7; font-weight: 300; max-width: 42rem; }
 .about__text strong { font-weight: 600; color: var(--accent); }
 
+@media (min-width: 1024px) {
+  .about__grid { grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr); gap: 4rem; }
+}
+
+.about__logo { width: 100%; max-width: 22rem; margin-inline: auto; }
+@media (min-width: 768px) { .about__logo { max-width: 26rem; } }
+@media (min-width: 1024px) { .about__logo { max-width: 30rem; margin-inline: auto 0; } }
+
+.about__logo-svg { display: block; width: 100%; height: auto; overflow: visible; }
+.about__logo.in-view .about__logo-svg {
+  animation: about-logo-impact 0.4s ease-out 0.62s both, about-logo-glow 1.4s ease-out 1.9s both;
+}
+
+.about__logo-green { fill: var(--accent); }
+.about__logo-piece { opacity: 0; transform-box: fill-box; transform-origin: 50% 100%; }
+.about__logo.in-view .about__logo-piece {
+  animation: about-logo-drive-in 0.8s cubic-bezier(0.22, 0.9, 0.3, 1) calc(var(--i) * 0.07s) both;
+}
+
+.about__logo-letter {
+  fill: var(--fg); fill-opacity: 0;
+  stroke: var(--fg); stroke-width: 0.6; stroke-dasharray: 1; stroke-dashoffset: 1;
+}
+.about__logo.in-view .about__logo-letter {
+  animation:
+    about-logo-draw 0.6s ease-out calc(0.75s + var(--i) * 0.08s) both,
+    about-logo-fill 0.35s ease-out calc(1.3s + var(--i) * 0.08s) both,
+    about-logo-flicker 0.45s linear calc(1.3s + var(--i) * 0.08s) both;
+}
+
+.about__logo-streak { fill: var(--accent); opacity: 0; }
+.about__logo-streak--light { fill: var(--fg); }
+.about__logo.in-view .about__logo-streak {
+  animation: about-logo-streak 0.6s cubic-bezier(0.3, 0.6, 0.4, 1) calc(var(--i) * 0.06s) both;
+}
+
+.about__logo-stop { stop-color: var(--accent-strong); }
+.about__logo-stop--clear { stop-opacity: 0; }
+.about__logo.in-view .about__logo-shine {
+  animation: about-logo-sweep 0.9s ease-in-out 1.85s both, about-logo-sweep-idle 7s ease-in-out 5s infinite;
+}
+
+.about__logo-beam { fill: var(--accent-strong); opacity: 0; }
+.about__logo.in-view .about__logo-beam { animation: about-logo-beam 0.9s ease-in-out 1.85s both; }
+
+.about__logo-readout {
+  display: flex; align-items: center; gap: 0.75rem; margin-top: 1.75rem;
+  font-family: var(--font-mono); font-size: 0.625rem; text-transform: uppercase; letter-spacing: 0.14em; color: var(--fg-faint);
+  opacity: 0; transition: opacity 0.4s ease-out;
+}
+@media (min-width: 1024px) { .about__logo-readout { font-size: 0.6875rem; } }
+.about__logo.in-view .about__logo-readout { opacity: 1; animation: about-logo-readout-out 0.6s ease-in 4.1s forwards; }
+.about__logo-bar { position: relative; flex: 1; height: 2px; background-color: var(--border); overflow: hidden; }
+.about__logo-bar::after { content: ""; position: absolute; inset: 0; background-color: var(--accent); transform: scaleX(0); transform-origin: left; }
+.about__logo.in-view .about__logo-bar::after { animation: about-logo-progress 2.4s cubic-bezier(0.6, 0, 0.3, 1) 0.2s both; }
+.about__logo-ok { color: var(--accent); font-weight: 700; opacity: 0; }
+.about__logo.in-view .about__logo-ok { animation: about-logo-ok 0.6s linear 2.6s both; }
+
+@keyframes about-logo-drive-in {
+  0%   { opacity: 0; transform: translateX(320px) skewX(-40deg); }
+  15%  { opacity: 1; }
+  62%  { transform: translateX(-9px) skewX(16deg); }
+  80%  { transform: translateX(2px) skewX(-5deg); }
+  100% { opacity: 1; transform: none; }
+}
+@keyframes about-logo-impact {
+  0%, 100% { transform: none; }
+  20% { transform: translate(-5px, 1px); }
+  45% { transform: translate(3px, -1px); }
+  70% { transform: translate(-1px, 0); }
+}
+@keyframes about-logo-draw { to { stroke-dashoffset: 0; } }
+@keyframes about-logo-fill { to { fill-opacity: 1; stroke-width: 0; } }
+@keyframes about-logo-flicker {
+  0%, 100% { opacity: 1; }
+  15% { opacity: 0.25; }
+  30% { opacity: 1; }
+  50% { opacity: 0.5; }
+  65% { opacity: 1; }
+}
+@keyframes about-logo-streak {
+  0%   { opacity: 0; transform: translateX(320px); }
+  25%  { opacity: 0.85; }
+  100% { opacity: 0; transform: translateX(-140px); }
+}
+@keyframes about-logo-sweep {
+  from { transform: translateX(0); }
+  to   { transform: translateX(310px); }
+}
+@keyframes about-logo-sweep-idle {
+  0%   { transform: translateX(0); }
+  18%  { transform: translateX(310px); }
+  100% { transform: translateX(310px); }
+}
+@keyframes about-logo-beam {
+  0%   { opacity: 0; transform: translateX(0); }
+  10%  { opacity: 1; }
+  90%  { opacity: 1; }
+  100% { opacity: 0; transform: translateX(262px); }
+}
+@keyframes about-logo-glow {
+  0%   { filter: drop-shadow(0 0 0 transparent); }
+  35%  { filter: drop-shadow(0 0 28px var(--accent-border)); }
+  100% { filter: drop-shadow(0 0 18px var(--accent-dim)); }
+}
+@keyframes about-logo-progress { to { transform: scaleX(1); } }
+@keyframes about-logo-readout-out { to { opacity: 0; transform: translateY(-6px); visibility: hidden; } }
+@keyframes about-logo-ok {
+  0%, 14% { opacity: 0; }
+  15%, 34% { opacity: 1; }
+  35%, 54% { opacity: 0; }
+  55%, 100% { opacity: 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .about__logo *, .about__logo *::after { animation: none !important; }
+  .about__logo-piece, .about__logo-ok, .about__logo-readout { opacity: 1; }
+  .about__logo-letter { fill-opacity: 1; stroke-width: 0; }
+  .about__logo-bar::after { transform: none; }
+}
+
 .about__stats { display: flex; flex-direction: column; gap: 0; padding-top: 0; border-top: 1px solid var(--border); }
 @media (min-width: 768px) { .about__stats { flex-direction: row; } }
 

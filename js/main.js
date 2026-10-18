@@ -95,7 +95,7 @@ function initServicesDropdown() {
 }
 
 function initRevealAnimations() {
-  var targets = document.querySelectorAll(".reveal, .reveal-x-left");
+  var targets = document.querySelectorAll(".reveal, .reveal-x-left, .about__logo");
 
   if (!("IntersectionObserver" in window)) {
     targets.forEach(function (el) { el.classList.add("in-view"); });
