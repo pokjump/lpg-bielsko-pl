@@ -71,27 +71,6 @@ img, video { -webkit-user-drag: none; user-select: none; -webkit-user-select: no
 
 /* ---------- shared type / utility ---------- */
 
-.eyebrow {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  font-family: var(--font-mono);
-  font-size: 0.75rem;
-  font-weight: 500;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--accent);
-  margin-bottom: 1.25rem;
-}
-.eyebrow::before {
-  content: "";
-  width: 1.5rem;
-  height: 1px;
-  background: var(--accent);
-  display: block;
-}
-.eyebrow--center { justify-content: center; }
-
 .section-title {
   font-family: var(--font-head);
   font-weight: 700;
@@ -367,8 +346,8 @@ img, video { -webkit-user-drag: none; user-select: none; -webkit-user-select: no
 
 /* ---------- services ---------- */
 
-.services { padding-block: 5rem; background-color: var(--surface); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
-@media (min-width: 768px) { .services { padding-block: 7rem; } }
+.services { padding-block: 4rem 5rem; background-color: var(--surface); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+@media (min-width: 768px) { .services { padding-block: 5.5rem 7rem; } }
 
 .services__heading {
   display: flex; flex-direction: column; justify-content: space-between; align-items: flex-start;
@@ -412,7 +391,7 @@ img, video { -webkit-user-drag: none; user-select: none; -webkit-user-select: no
 
 .service-card--lpg {
   grid-column: span 12; position: relative; overflow: hidden; background-color: var(--bg-raised);
-  padding: 3.5rem 2rem 2.5rem; display: flex; flex-direction: column; justify-content: flex-end; min-height: 380px;
+  padding: 3.25rem 2rem 2.5rem; display: flex; flex-direction: column; justify-content: flex-end; min-height: 340px;
 }
 .service-card--lpg:hover { background-color: var(--surface-high); }
 @media (min-width: 768px) { .service-card--lpg { grid-column: span 8; } }
@@ -423,10 +402,6 @@ img, video { -webkit-user-drag: none; user-select: none; -webkit-user-select: no
 .service-card__lpg-badge text { font-family: var(--font-mono); font-size: 14px; font-weight: 700; letter-spacing: 0.2em; }
 .service-card--lpg:hover .service-card__icon-corner svg { opacity: 0.9; }
 .service-card__body { position: relative; z-index: 10; }
-.service-card__eyebrow {
-  display: block; font-family: var(--font-mono); font-size: 0.6875rem; text-transform: uppercase;
-  letter-spacing: 0.1em; color: var(--accent); margin-bottom: 1rem;
-}
 .service-card__title {
   font-family: var(--font-head); font-size: 1.75rem; font-weight: 700; text-transform: uppercase;
   letter-spacing: -0.01em; color: var(--fg); margin-bottom: 1rem;
@@ -486,8 +461,8 @@ img, video { -webkit-user-drag: none; user-select: none; -webkit-user-select: no
 
 /* ---------- video showcase ---------- */
 
-.video-showcase { position: relative; overflow: hidden; padding-block: 5rem; background-color: var(--surface-lowest); }
-@media (min-width: 768px) { .video-showcase { padding-block: 7rem; } }
+.video-showcase { position: relative; overflow: hidden; padding-block: 4rem 5rem; background-color: var(--surface-lowest); }
+@media (min-width: 768px) { .video-showcase { padding-block: 5.5rem 7rem; } }
 .video-showcase__glow {
   position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
   width: 55vw; height: 55vw; background-color: rgba(53, 214, 166, 0.04); filter: blur(150px); pointer-events: none;
@@ -505,9 +480,9 @@ img, video { -webkit-user-drag: none; user-select: none; -webkit-user-select: no
 
 /* ---------- about ---------- */
 
-.about { position: relative; background-color: var(--bg-raised); padding-block: 5rem; overflow: hidden; color: var(--fg); }
-@media (min-width: 768px) { .about { padding-block: 7rem; } }
-@media (min-width: 1024px) { .about { padding-block: 10rem; } }
+.about { position: relative; background-color: var(--bg-raised); padding-block: 4rem 5rem; overflow: hidden; color: var(--fg); }
+@media (min-width: 768px) { .about { padding-block: 5.5rem 7rem; } }
+@media (min-width: 1024px) { .about { padding-block: 8rem 10rem; } }
 
 .about__bg { position: absolute; inset: 0; z-index: 0; overflow: hidden; background-color: var(--bg); }
 .about__video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; filter: blur(3px) grayscale(0.4); opacity: 0; transition: opacity 1s ease; transform: translateZ(0); will-change: opacity; }
@@ -521,7 +496,7 @@ img, video { -webkit-user-drag: none; user-select: none; -webkit-user-select: no
 
 .about__grid { display: grid; grid-template-columns: 1fr; gap: 3.5rem; align-items: center; margin-bottom: 5rem; }
 
-.about__title { margin-top: 1.5rem; font-family: var(--font-head); font-size: 2.25rem; font-weight: 700; letter-spacing: -0.02em; text-transform: uppercase; line-height: 1.08; }
+.about__title { font-family: var(--font-head); font-size: 2.25rem; font-weight: 700; letter-spacing: -0.02em; text-transform: uppercase; line-height: 1.08; }
 @media (min-width: 768px) { .about__title { font-size: 2.75rem; } }
 @media (min-width: 1024px) { .about__title { font-size: 3.25rem; } }
 .about__title-accent { color: var(--accent); }
@@ -686,8 +661,8 @@ img, video { -webkit-user-drag: none; user-select: none; -webkit-user-select: no
 
 /* ---------- reviews ---------- */
 
-.reviews { position: relative; overflow: hidden; background-color: var(--surface); padding-block: 5rem; color: var(--fg); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
-@media (min-width: 768px) { .reviews { padding-block: 7rem; } }
+.reviews { position: relative; overflow: hidden; background-color: var(--surface); padding-block: 4rem 5rem; color: var(--fg); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+@media (min-width: 768px) { .reviews { padding-block: 5.5rem 7rem; } }
 
 .reviews__heading { text-align: center; position: relative; z-index: 10; }
 
@@ -779,8 +754,8 @@ img, video { -webkit-user-drag: none; user-select: none; -webkit-user-select: no
 
 /* ---------- faq ---------- */
 
-.faq { position: relative; background-color: var(--surface); padding-block: 5rem; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
-@media (min-width: 768px) { .faq { padding-block: 7rem; } }
+.faq { position: relative; background-color: var(--surface); padding-block: 4rem 5rem; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+@media (min-width: 768px) { .faq { padding-block: 5.5rem 7rem; } }
 
 .faq__heading { margin-bottom: 3rem; }
 
@@ -1010,7 +985,6 @@ img, video { -webkit-user-drag: none; user-select: none; -webkit-user-select: no
 
 .page-hero__cert { display: flex; flex-direction: column; align-items: flex-start; gap: 0.75rem; width: 100%; max-width: 24rem; }
 @media (min-width: 1024px) { .page-hero__cert { justify-self: end; } }
-.page-hero__cert-eyebrow { font-family: var(--font-mono); font-size: 0.6875rem; text-transform: uppercase; letter-spacing: 0.12em; color: var(--accent); }
 .page-hero__cert-btn {
   position: relative; display: block; width: 100%; overflow: hidden;
   border: 1px solid var(--border-strong); background-color: var(--bg-raised);
@@ -1082,8 +1056,7 @@ img, video { -webkit-user-drag: none; user-select: none; -webkit-user-select: no
 @media (prefers-reduced-motion: reduce) {
   .info-card__gallery-photo img { animation: none; }
 }
-.info-card__gallery-body { display: block; padding: 1.5rem; }
-.info-card__gallery-eyebrow { display: block; font-family: var(--font-mono); font-size: 0.6875rem; text-transform: uppercase; letter-spacing: 0.12em; color: var(--fg-muted); margin-bottom: 0.625rem; }
+.info-card__gallery-body { display: block; padding: 1.25rem 1.5rem; }
 .info-card__gallery-title { display: block; font-family: var(--font-head); font-weight: 700; font-size: 1.0625rem; color: var(--fg); }
 
 .related-links { margin-top: 3.5rem; padding-top: 2.5rem; border-top: 1px solid var(--border); }
@@ -1209,8 +1182,8 @@ img, video { -webkit-user-drag: none; user-select: none; -webkit-user-select: no
 
 /* ---------- galeria: teaser (strona główna) i pełna galeria (podstrona) ---------- */
 
-.gallery-teaser { position: relative; overflow: hidden; padding-block: 5rem; background-color: var(--surface-lowest); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
-@media (min-width: 768px) { .gallery-teaser { padding-block: 7rem; } }
+.gallery-teaser { position: relative; overflow: hidden; padding-block: 4rem 5rem; background-color: var(--surface-lowest); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+@media (min-width: 768px) { .gallery-teaser { padding-block: 5.5rem 7rem; } }
 .gallery-teaser__heading { text-align: center; margin-bottom: 3rem; }
 
 .gallery-preview { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1px; background-color: var(--border); border: 1px solid var(--border); margin-bottom: 2.5rem; }
