@@ -202,30 +202,74 @@ function initCountUp() {
   groups.forEach(function (g) { observer.observe(g); });
 }
 
+function getEasterTime(year) {
+  var a = year % 19;
+  var b = Math.floor(year / 100);
+  var c = year % 100;
+  var d = Math.floor(b / 4);
+  var e = b % 4;
+  var f = Math.floor((b + 8) / 25);
+  var g = Math.floor((b - f + 1) / 3);
+  var h = (19 * a + b - d - g + 15) % 30;
+  var i = Math.floor(c / 4);
+  var k = c % 4;
+  var l = (32 + 2 * e + 2 * i - h - k) % 7;
+  var m = Math.floor((a + 11 * h + 22 * l) / 451);
+  var month = Math.floor((h + l - 7 * m + 114) / 31);
+  var day = ((h + l - 7 * m + 114) % 31) + 1;
+  return Date.UTC(year, month - 1, day);
+}
+
+function isPolishHoliday(date) {
+  var fixed = ["1-1", "1-6", "5-1", "5-3", "8-15", "11-1", "11-11", "12-24", "12-25", "12-26"];
+  if (fixed.indexOf((date.getUTCMonth() + 1) + "-" + date.getUTCDate()) !== -1) return true;
+
+  var fromEaster = Math.round((date.getTime() - getEasterTime(date.getUTCFullYear())) / 86400000);
+  return fromEaster === 1 || fromEaster === 60;
+}
+
+function isWorkday(date) {
+  var day = date.getUTCDay();
+  return day !== 0 && day !== 6 && !isPolishHoliday(date);
+}
+
 function getWorkshopStatus() {
   if (!window.Intl) return null;
 
   var parts = {};
   new Intl.DateTimeFormat("en-GB", {
-    timeZone: "Europe/Warsaw", weekday: "short", hour: "2-digit", minute: "2-digit", hourCycle: "h23"
+    timeZone: "Europe/Warsaw", year: "numeric", month: "numeric", day: "numeric",
+    hour: "2-digit", minute: "2-digit", hourCycle: "h23"
   }).formatToParts(new Date()).forEach(function (p) { parts[p.type] = p.value; });
 
-  var day = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"].indexOf(parts.weekday);
+  var today = new Date(Date.UTC(parseInt(parts.year, 10), parseInt(parts.month, 10) - 1, parseInt(parts.day, 10)));
   var minutes = parseInt(parts.hour, 10) * 60 + parseInt(parts.minute, 10);
-  if (day < 0 || isNaN(minutes)) return null;
+  if (isNaN(today.getTime()) || isNaN(minutes)) return null;
 
-  var weekday = day < 5;
+  var workday = isWorkday(today);
   var status = { open: false, time: parts.hour + ":" + parts.minute };
-  if (weekday && minutes >= 7 * 60 && minutes < 17 * 60) {
+  if (workday && minutes >= 7 * 60 && minutes < 17 * 60) {
     status.open = true;
     status.label = "Otwarte";
     status.note = "Zapraszamy do 17:00";
-  } else {
-    status.label = "Zamknięte";
-    if (weekday && minutes < 7 * 60) status.note = "Otwieramy dziś o 7:00";
-    else if (day < 4) status.note = "Otwieramy jutro o 7:00";
-    else status.note = "Otwieramy w poniedziałek o 7:00";
+    return status;
   }
+
+  status.label = "Zamknięte";
+  if (workday && minutes < 7 * 60) {
+    status.note = "Otwieramy dziś o 7:00";
+    return status;
+  }
+
+  var next = new Date(today.getTime());
+  var ahead = 0;
+  do {
+    next.setUTCDate(next.getUTCDate() + 1);
+    ahead++;
+  } while (!isWorkday(next) && ahead < 14);
+
+  var dayNames = ["w niedzielę", "w poniedziałek", "we wtorek", "w środę", "w czwartek", "w piątek", "w sobotę"];
+  status.note = "Otwieramy " + (ahead === 1 ? "jutro" : dayNames[next.getUTCDay()]) + " o 7:00";
   return status;
 }
 
