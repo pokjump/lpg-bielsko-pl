@@ -4,6 +4,7 @@ function initApp() {
     initServicesDropdown,
     initRevealAnimations,
     initCountUp,
+    initHeroScanner,
     initAboutVideos,
     loadAllEmbeds,
     function () {
@@ -178,25 +179,6 @@ function animateCountUpGroup(container) {
 function initCountUp() {
   resolveCountSince();
 
-  var heroStats = document.querySelector(".hero__stats");
-  var heroIsMobile = window.matchMedia("(max-width: 767px)").matches;
-  if (heroStats && heroIsMobile && "IntersectionObserver" in window) {
-    var heroObserver = new IntersectionObserver(
-      function (entries) {
-        entries.forEach(function (entry) {
-          if (entry.isIntersecting) {
-            heroObserver.unobserve(entry.target);
-            animateCountUpGroup(entry.target);
-          }
-        });
-      },
-      { root: null, rootMargin: "0px", threshold: 0.01 }
-    );
-    heroObserver.observe(heroStats);
-  } else if (heroStats) {
-    animateCountUpGroup(heroStats);
-  }
-
   var groups = document.querySelectorAll(".about__stats, .reviews__heading");
   if (!groups.length) return;
 
@@ -218,6 +200,101 @@ function initCountUp() {
   );
 
   groups.forEach(function (g) { observer.observe(g); });
+}
+
+function getWorkshopStatus() {
+  if (!window.Intl) return null;
+
+  var parts = {};
+  new Intl.DateTimeFormat("en-GB", {
+    timeZone: "Europe/Warsaw", weekday: "short", hour: "2-digit", minute: "2-digit", hourCycle: "h23"
+  }).formatToParts(new Date()).forEach(function (p) { parts[p.type] = p.value; });
+
+  var day = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"].indexOf(parts.weekday);
+  var minutes = parseInt(parts.hour, 10) * 60 + parseInt(parts.minute, 10);
+  if (day < 0 || isNaN(minutes)) return null;
+
+  var weekday = day < 5;
+  var status = { open: false, time: parts.hour + ":" + parts.minute };
+  if (weekday && minutes >= 7 * 60 && minutes < 17 * 60) {
+    status.open = true;
+    status.label = "Otwarte";
+    status.note = "Zapraszamy do 17:00";
+  } else {
+    status.label = "Zamknięte";
+    if (weekday && minutes < 7 * 60) status.note = "Otwieramy dziś o 7:00";
+    else if (day < 4) status.note = "Otwieramy jutro o 7:00";
+    else status.note = "Otwieramy w poniedziałek o 7:00";
+  }
+  return status;
+}
+
+function initHeroScanner() {
+  var obd = document.querySelector("[data-obd]");
+  if (!obd) return;
+
+  var statusEl = obd.querySelector("[data-obd-status]");
+  var noteEl = obd.querySelector("[data-obd-note]");
+  var rescan = obd.querySelector("[data-obd-rescan]");
+  var clockEl = obd.querySelector("[data-obd-clock]");
+  var counters = obd.querySelectorAll(".count-up");
+  var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var timers = [];
+
+  function showResult() {
+    var status = getWorkshopStatus();
+    if (status) {
+      statusEl.textContent = status.label;
+      noteEl.textContent = status.note;
+      statusEl.classList.toggle("is-open", status.open);
+    }
+    obd.setAttribute("data-phase", "result");
+    if (reduceMotion) {
+      counters.forEach(function (el) { el.textContent = el.getAttribute("data-count"); });
+    } else {
+      animateCountUpGroup(obd);
+    }
+  }
+
+  function run(skipBoot) {
+    timers.forEach(clearTimeout);
+    timers = [];
+    var now = getWorkshopStatus();
+    if (clockEl && now) clockEl.textContent = now.time;
+    if (reduceMotion) {
+      showResult();
+      return;
+    }
+    var scanAt = skipBoot ? 0 : 1400;
+    if (skipBoot) {
+      obd.setAttribute("data-phase", "scan");
+    } else {
+      obd.setAttribute("data-phase", "boot");
+      timers.push(setTimeout(function () { obd.setAttribute("data-phase", "scan"); }, scanAt));
+    }
+    timers.push(setTimeout(showResult, scanAt + 3200));
+  }
+
+  if (rescan) rescan.addEventListener("click", function () { run(true); });
+
+  if (!("IntersectionObserver" in window)) {
+    run(false);
+    return;
+  }
+
+  obd.setAttribute("data-phase", "boot");
+  var observer = new IntersectionObserver(
+    function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          observer.unobserve(entry.target);
+          run(false);
+        }
+      });
+    },
+    { root: null, rootMargin: "0px", threshold: 0.3 }
+  );
+  observer.observe(obd);
 }
 
 function initAboutVideos() {

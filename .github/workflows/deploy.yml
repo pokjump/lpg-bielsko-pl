@@ -31,8 +31,13 @@ jobs:
             _seo/**
             tools/**
             unused/**
+            ad_redesign/**
             AGENTS.md
             CLAUDE.md
             CLAUDE.local.md
+            PRODUCT.md
+            DESIGN.md
+            DESIGN.json
+            .impeccable/**
             README.md
             LICENSE
