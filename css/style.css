@@ -156,6 +156,8 @@ img, video { -webkit-user-drag: none; user-select: none; -webkit-user-select: no
   animation-delay: var(--delay, 0s);
 }
 @keyframes hero-in { to { opacity: 1; transform: translateY(0); } }
+.hero-anim--slide { opacity: 1; animation-name: hero-slide; }
+@keyframes hero-slide { to { transform: translateY(0); } }
 
 @media (prefers-reduced-motion: reduce) {
   .reveal, .reveal-x-left, .hero-anim {
@@ -379,7 +381,7 @@ img, video { -webkit-user-drag: none; user-select: none; -webkit-user-select: no
 .obd__view--boot { align-items: center; justify-content: center; gap: 1.25rem; padding-bottom: 2rem; }
 .obd__logo { font-family: var(--font-head); font-size: 1.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: -0.01em; }
 .obd__loader { display: block; width: 6rem; height: 3px; background-color: var(--surface-highest); border-radius: 2px; overflow: hidden; }
-.obd__loader span { display: block; width: 0; height: 100%; background-color: var(--fg); }
+.obd__loader span { display: block; width: 100%; height: 100%; background-color: var(--fg); transform: scaleX(0); transform-origin: left; }
 .obd[data-phase="boot"] .obd__loader span { animation: obd-fill 1.2s ease-in-out forwards; }
 
 .obd__head {
@@ -388,9 +390,9 @@ img, video { -webkit-user-drag: none; user-select: none; -webkit-user-select: no
   font-family: var(--font-head); font-size: 0.875rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.02em;
 }
 .obd__progress { display: block; height: 4px; background-color: var(--surface-highest); border-radius: 2px; overflow: hidden; }
-.obd__progress-fill { display: block; width: 0; height: 100%; background-color: var(--accent); }
+.obd__progress-fill { display: block; width: 100%; height: 100%; background-color: var(--accent); transform: scaleX(0); transform-origin: left; }
 .obd[data-phase="scan"] .obd__progress-fill { animation: obd-fill 2.9s linear forwards; }
-@keyframes obd-fill { to { width: 100%; } }
+@keyframes obd-fill { to { transform: scaleX(1); } }
 
 .obd__systems { list-style: none; margin: 0; padding: 0.25rem 0.875rem; }
 .obd__systems li {
@@ -737,7 +739,7 @@ img, video { -webkit-user-drag: none; user-select: none; -webkit-user-select: no
 .about__stat-value--primary { color: var(--accent); }
 .count-up { transition: opacity 0.3s ease; font-variant-numeric: tabular-nums; }
 .about__stat-image { height: 2.75rem; margin-bottom: 0.875rem; width: 100%; display: flex; align-items: center; justify-content: center; }
-.about__stat-image svg { max-height: 100%; max-width: 130px; height: 100%; width: auto; filter: brightness(0) invert(1); opacity: 0.9; }
+.about__stat-image img { max-height: 100%; max-width: 130px; height: 100%; width: auto; filter: brightness(0) invert(1); opacity: 0.9; }
 @media (min-width: 1024px) { .about__stat-value, .about__stat-image { height: 3.25rem; } }
 
 .about__stat-label { font-family: var(--font-mono); font-size: 0.6875rem; text-transform: uppercase; color: var(--fg-muted); letter-spacing: 0.14em; }
