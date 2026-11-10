@@ -8,7 +8,7 @@ function initApp() {
     initAboutVideos,
     loadAllEmbeds,
     function () {
-      document.getElementById("currentYear").textContent = new Date().getFullYear();
+      document.getElementById("currentYear").textContent = "2011 - " + new Date().getFullYear();
     }
   ].forEach(function (init) {
     try {
