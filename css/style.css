@@ -28,9 +28,9 @@
   --device-edge:      #33383f;
   --device-print:     #a3a9b0;
 
-  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
-  --font-head: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
-  --font-mono: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
+  --font-sans: "Barlow", ui-sans-serif, system-ui, sans-serif;
+  --font-head: "Barlow Semi Condensed", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
 
   --header-bg:        rgba(10, 11, 13, 0.96);
 
@@ -84,7 +84,7 @@ img, video { -webkit-user-drag: none; user-select: none; -webkit-user-select: no
 .section-title {
   font-family: var(--font-head);
   font-weight: 700;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.01em;
   text-transform: uppercase;
   color: var(--fg);
   font-size: 1.875rem;
@@ -312,7 +312,7 @@ img, video { -webkit-user-drag: none; user-select: none; -webkit-user-select: no
 .hero__text { max-width: 46rem; }
 
 .hero__title {
-  font-family: var(--font-head); font-size: 2.25rem; font-weight: 700; letter-spacing: -0.03em;
+  font-family: var(--font-head); font-size: 2.25rem; font-weight: 700; letter-spacing: -0.01em;
   text-transform: uppercase; line-height: 0.95; margin-bottom: 2rem;
 }
 @media (min-width: 640px) { .hero__title { font-size: 3.25rem; } }
@@ -612,7 +612,7 @@ img, video { -webkit-user-drag: none; user-select: none; -webkit-user-select: no
 .about__grid { display: grid; grid-template-columns: 1fr; gap: 2.5rem; align-items: center; margin-bottom: 3rem; }
 @media (min-width: 768px) { .about__grid { gap: 3.5rem; margin-bottom: 5rem; } }
 
-.about__title { font-family: var(--font-head); font-size: 1.875rem; font-weight: 700; letter-spacing: -0.02em; text-transform: uppercase; line-height: 1.08; }
+.about__title { font-family: var(--font-head); font-size: 1.875rem; font-weight: 700; letter-spacing: -0.01em; text-transform: uppercase; line-height: 1.08; }
 @media (min-width: 768px) { .about__title { font-size: 2.75rem; } }
 @media (min-width: 1024px) { .about__title { font-size: 3.25rem; } }
 .about__title-accent { color: var(--accent); }
@@ -1043,7 +1043,7 @@ img, video { -webkit-user-drag: none; user-select: none; -webkit-user-select: no
 .breadcrumbs__sep { color: var(--fg-faint); }
 .breadcrumbs__current { color: var(--fg); }
 
-.page-hero__title { font-family: var(--font-head); font-size: 2rem; font-weight: 700; letter-spacing: -0.02em; text-transform: uppercase; line-height: 1.12; max-width: 46rem; }
+.page-hero__title { font-family: var(--font-head); font-size: 2rem; font-weight: 700; letter-spacing: -0.01em; text-transform: uppercase; line-height: 1.12; max-width: 46rem; }
 @media (min-width: 768px) { .page-hero__title { font-size: 2.75rem; } }
 
 .page-hero__lead { margin-top: 1.25rem; max-width: 42rem; font-size: 1.0625rem; font-weight: 300; color: var(--fg-muted); line-height: 1.7; }
