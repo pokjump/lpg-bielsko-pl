@@ -108,13 +108,13 @@ zewnętrznych serwerów.
 
 | Krój | Zmienna | Rola | Grubości |
 | --- | --- | --- | --- |
-| Space Grotesk | `--font-head` | nagłówki, tytuły sekcji, liczby w statystykach | 500, 600, 700 |
-| Inter | `--font-sans` | tekst ciągły, leady, elementy interfejsu | 300 do 800 |
-| JetBrains Mono | `--font-mono` | etykiety, nadtytuły, podpisy techniczne | 400, 500, 600 |
+| Barlow Semi Condensed | `--font-head` | nagłówki, tytuły sekcji, liczby w statystykach | 500, 600, 700 |
+| Barlow | `--font-sans` | tekst ciągły, leady, elementy interfejsu | 300 do 700 |
+| IBM Plex Mono | `--font-mono` | etykiety, nadtytuły, podpisy techniczne | 400 do 700 |
 
 Zasady, które trzymają całość w ryzach:
 
-- Nagłówki są pisane wersalikami, ze ściśniętym odstępem liter (`letter-spacing: -0.02em`),
+- Nagłówki są pisane wersalikami, z lekko ściśniętym odstępem liter (`letter-spacing: -0.01em`),
   przez co bloki tekstu czytają się jak tabliczka warsztatowa.
 - Nadtytuły sekcji są składane krojem mono, wersalikami, z rozstrzelonym odstępem
   (`0.12em`) i poprzedzone krótką kreską w kolorze akcentu.
