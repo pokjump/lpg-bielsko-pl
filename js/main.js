@@ -31,19 +31,49 @@ function initHeader() {
   var mobileMenu = document.getElementById("mobileMenu");
   var logoLink = document.getElementById("logoLink");
 
+  var lastY = window.scrollY;
   function handleScroll() {
-    if (window.scrollY > 20) {
-      header.classList.add("is-scrolled");
-    } else {
-      header.classList.remove("is-scrolled");
+    var y = window.scrollY;
+    header.classList.toggle("is-scrolled", y > 20);
+    var goingDown = y > lastY + 4;
+    var goingUp = y < lastY - 4;
+    if (goingDown && y > 240 && !mobileOpen && !header.matches(":focus-within")) {
+      header.classList.add("is-hidden");
+    } else if (goingUp || y <= 240) {
+      header.classList.remove("is-hidden");
     }
+    if (goingDown || goingUp) lastY = y;
   }
   window.addEventListener("scroll", handleScroll, { passive: true });
   handleScroll();
 
   var mobileOpen = false;
+  var servicesGroup = mobileMenu.querySelector(".site-header__mobile-group");
+  var servicesToggle = mobileMenu.querySelector(".site-header__mobile-toggle");
+
+  function setServicesOpen(open) {
+    if (!servicesGroup) return;
+    servicesGroup.classList.toggle("is-open", open);
+    servicesToggle.setAttribute("aria-expanded", String(open));
+  }
+
+  if (servicesToggle) {
+    servicesToggle.addEventListener("click", function () {
+      setServicesOpen(!servicesGroup.classList.contains("is-open"));
+    });
+  }
+
   function setMobileOpen(open) {
     mobileOpen = open;
+    if (open) {
+      var rect = burgerBtn.getBoundingClientRect();
+      mobileMenu.style.setProperty("--menu-x", Math.round(rect.left + rect.width / 2) + "px");
+      mobileMenu.style.setProperty("--menu-y", Math.round(rect.top + rect.height / 2) + "px");
+      mobileMenu.scrollTop = 0;
+      header.classList.remove("is-hidden");
+    } else {
+      setServicesOpen(false);
+    }
     burgerBtn.classList.toggle("is-open", open);
     burgerBtn.setAttribute("aria-expanded", String(open));
     mobileMenu.classList.toggle("is-open", open);
@@ -55,7 +85,7 @@ function initHeader() {
     setMobileOpen(!mobileOpen);
   });
 
-  document.querySelectorAll(".site-header__mobile-link, .site-header__mobile-call").forEach(function (link) {
+  document.querySelectorAll("a.site-header__mobile-link, .site-header__mobile-sublink, .site-header__mobile-call").forEach(function (link) {
     link.addEventListener("click", function () {
       setMobileOpen(false);
     });
