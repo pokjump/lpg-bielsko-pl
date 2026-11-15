@@ -736,12 +736,6 @@ html.has-mobile-menu-open .site-header__logo { opacity: 1; transform: none; poin
   animation: about-logo-streak 0.6s cubic-bezier(0.3, 0.6, 0.4, 1) calc(var(--i) * 0.06s) both;
 }
 
-.about__logo-stop { stop-color: var(--accent-strong); }
-.about__logo-stop--clear { stop-opacity: 0; }
-.about__logo.in-view .about__logo-shine {
-  animation: about-logo-sweep 0.9s ease-in-out 1.85s both, about-logo-sweep-idle 7s ease-in-out 5s infinite;
-}
-
 .about__logo-beam { fill: var(--accent-strong); opacity: 0; }
 .about__logo.in-view .about__logo-beam { animation: about-logo-beam 0.9s ease-in-out 1.85s both; }
 
@@ -783,15 +777,6 @@ html.has-mobile-menu-open .site-header__logo { opacity: 1; transform: none; poin
   0%   { opacity: 0; transform: translateX(320px); }
   25%  { opacity: 0.85; }
   100% { opacity: 0; transform: translateX(-140px); }
-}
-@keyframes about-logo-sweep {
-  from { transform: translateX(0); }
-  to   { transform: translateX(310px); }
-}
-@keyframes about-logo-sweep-idle {
-  0%   { transform: translateX(0); }
-  18%  { transform: translateX(310px); }
-  100% { transform: translateX(310px); }
 }
 @keyframes about-logo-beam {
   0%   { opacity: 0; transform: translateX(0); }

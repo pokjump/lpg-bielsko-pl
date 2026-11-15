@@ -32,7 +32,7 @@
 
 <link rel="stylesheet" href="css/fonts.css?v=e96d44db">
 <link rel="preload" as="image" href="images/engine.webp" fetchpriority="high">
-<link rel="stylesheet" href="css/style.css?v=55c0b1a0">
+<link rel="stylesheet" href="css/style.css?v=4b11e7cd">
 
 <script type="application/ld+json">
 {
@@ -399,18 +399,10 @@
       <div class="about__logo" role="img" aria-label="Auto Diag Bielsko-Biała – logo">
         <svg class="about__logo-svg" viewBox="0 0 260 73.14" aria-hidden="true" focusable="false">
           <defs>
-            <linearGradient id="aboutLogoShineGradient">
-              <stop offset="0" class="about__logo-stop about__logo-stop--clear" />
-              <stop offset="0.5" class="about__logo-stop" />
-              <stop offset="1" class="about__logo-stop about__logo-stop--clear" />
-            </linearGradient>
             <filter id="aboutLogoBeamGlow" x="-800%" y="-10%" width="1700%" height="120%">
               <feGaussianBlur stdDeviation="2" result="blur" />
               <feMerge><feMergeNode in="blur" /><feMergeNode in="SourceGraphic" /></feMerge>
             </filter>
-            <mask id="aboutLogoMask" maskUnits="userSpaceOnUse" x="0" y="0" width="260" height="74" style="mask-type:alpha">
-              <use href="#aboutLogoGlyphs" />
-            </mask>
           </defs>
 
           <g class="about__logo-streaks">
@@ -422,7 +414,7 @@
             <rect class="about__logo-streak about__logo-streak--light" style="--i:5" x="0" y="66" width="36" height="0.5" />
           </g>
 
-          <g id="aboutLogoGlyphs">
+          <g>
             <g class="about__logo-green">
               <path class="about__logo-piece" style="--i:0" fill-rule="evenodd" d="M50.23 1.45 44.78 1.59 26.43 29.19 58.93 29.12Z" />
               <path class="about__logo-piece" style="--i:1" fill-rule="evenodd" d="M20.15 38.23 20.29 38.5 61.83 38.43 60.38 33.54 59.96 33.19 23.67 33.19Z" />
@@ -442,9 +434,6 @@
             </g>
           </g>
 
-          <g mask="url(#aboutLogoMask)">
-            <rect class="about__logo-shine" x="-40" y="0" width="40" height="74" fill="url(#aboutLogoShineGradient)" />
-          </g>
           <rect class="about__logo-beam" x="-1" y="-8" width="1.2" height="88" filter="url(#aboutLogoBeamGlow)" />
         </svg>
 
